@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<!--[if IE 7 ]>    <html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en-gb" class="isie ie8 oldie no-js"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en-gb" class="isie ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> 
+<html lang="en-gb" class="no-js"> <!--<![endif]-->
+<head>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+<?php echo $this->headTitle('Школица Мали Моцарт')->setSeparator(' | ');?>
+<meta name="description" content="">
+<meta name="author" content="Ђорђе Стојиљковић">
+<link rel="shortcut icon" href="<?php echo $this->baseUrl('favicon.ico')?>" type="image/x-icon" />
+<link href="<?php echo $this->baseUrl('style.css')?>" rel="stylesheet" type="text/css">
+<link href="<?php echo $this->baseUrl('css/shortcodes.css')?>" rel="stylesheet" type="text/css">
+<link href="<?php echo $this->baseUrl('css/responsive.css')?>" rel="stylesheet" type="text/css">
+<link href="<?php echo $this->baseUrl('css/font-awesome.min.css')?>" rel="stylesheet" type="text/css">
+<link rel='stylesheet' id='layerslider-css' href="<?php echo $this->baseUrl('css/layerslider.css')?>" type='text/css' media='all' />
+<!--prettyPhoto-->
+<link href="<?php echo $this->baseUrl('css/prettyPhoto.css');?>" rel="stylesheet" type="text/css" media="all" />   
+<!--[if IE 7]>
+<link href="css/font-awesome-ie7.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--Fonts-->
+<link href='../../../fonts.googleapis.com/cssea9f.css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='../../../fonts.googleapis.com/css5c84.css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='../../../fonts.googleapis.com/css76b9.css?family=Bubblegum+Sans' rel='stylesheet' type='text/css'>
+<!--jquery-->
+<script src="<?php echo $this->baseUrl('js/modernizr-2.6.2.min.js');?>"></script>
+</head>
+<body class="main">
+	<!--wrapper starts-->
+    <div class="wrapper">
+        <!--header starts-->
+        <header>
+            <!--menu-container starts-->
+            <div id="menu-container">
+                <div class="container">
+                    <!--nav starts-->
+                    <nav id="main-menu">
+                    	<div class="dt-menu-toggle" id="dt-menu-toggle">Мени<span class="dt-menu-toggle-icon"></span></div>
+                        <ul id="menu-main-menu" class="menu">
+                            <li class="current_page_item menu-item-simple-parent menu-item-depth-0 red"> 
+                                <a href="<?= $this->baseUrl('/') ?>"> Почетна </a> 
+                                <a class="dt-menu-expand">+</a>                      
+                            </li>
+                            <li class="mustard"> <a href="<?= $this->url(array('controller' => 'about', 'action' => 'index'),'default', true) ?>"> О Нама </a> 
+                            </li>
+                            <li class="green"> <a href="<?= $this->url(array('controller' => 'workshop', 'action' => 'index'),'default', true) ?>"> Радионице </a> </li>
+                            <li class="menu-item-simple-parent menu-item-depth-0 red"> <a href="index.html"> Настава </a> 
+                                <ul class="sub-menu">
+                                    <li> <a href="<?= $this->url(array('controller' => 'workshop', 'action' => 'group'),'default', true) ?>"> Групна настава </a> </li>
+                                    <li> <a href="<?= $this->url(array('controller' => 'workshop', 'action' => 'individual'),'default', true) ?>"> Индивидуална настава </a>  </li> 
+                                </ul>  
+                                <a class="dt-menu-expand">+</a>                      
+                            </li>
+                            <li class="yellow"> <a href="<?= $this->url(array('controller' => 'gallery', 'action' => 'index'),'default', true) ?>"> Галерија </a> </li>
+                            <li class="menu-item-simple-parent menu-item-depth-0 lavender"><a href="<?= $this->url(array('controller' => 'blog', 'action' => 'index'),'default', true) ?>" title="">Новости</a>
+                            </li>
+                            <li class="pink"><a href="<?= $this->url(array('controller' => 'contact', 'action' => 'index'),'default', true) ?>" title="">Контакт</a></li>
+                        </ul>
+                    </nav>
+                    <!--nav ends-->
+
+                    <ul class="dt-sc-social-icons">
+                        <li><a href="#" title="Facebook" class="dt-sc-tooltip-top facebook"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="#" title="Youtube" class="dt-sc-tooltip-top youtube"><span class="fa fa-youtube"></span></a></li>
+                        <li><a href="#" title="Twitter" class="dt-sc-tooltip-top twitter"><span class="fa fa-twitter"></span></a></li>
+                        <li><a href="#" title="Google Plus" class="dt-sc-tooltip-top gplus"><span class="fa fa-google-plus"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--menu-container ends-->
+        </header>
+        <!--header ends-->
+        <!--@ZEND LOAD CONTENT-->
+        
+        <?= $this->layout()->content; ?>
+        
+        <!--@END ZEND CONTENT-->
+        <!--footer starts-->
+        <footer>
+            <!--footer-widgets-wrapper starts-->
+            <div class="footer-widgets-wrapper">
+                <!--container starts-->
+                <div class="container">
+                    
+                    <div class="column dt-sc-one-fourth first">
+                        <aside class="widget widget_text">
+                            <h3 class="widgettitle red_sketch"> Радионице </h3>
+                            <p>Неке од тема којима се бавимо на радионицама:</p>
+                            <ul>
+                                <li> <a href="#"> Звук </a> </li>
+                                <li> <a href="#"> Ритам </a> </li>
+                                <li> <a href="#"> Мелодија </a> </li>
+                                <li> <a href="#"> Музичке игре и бројалице </a> </li>
+                                <li> <a href="#"> Учење нота уз помоћ шарени картица </a> </li>
+                                <li> <a href="#"> Уради сам-направи свој инструмент! </a> </li>
+                            </ul>
+                        </aside>
+                    </div>
+                    <div class="column dt-sc-one-fourth">
+                        <aside class="widget widget_recent_entries">
+                            <h3 class="widgettitle green_sketch"> Последње објаве </h3>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/blog_list1.jpg" alt="" title="">
+                                    </a>    
+                                    <h6><a href="#"> Amazing post with all  goodies </a></h6>
+                                    <span> March 23, 2014 </span>       
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/blog_list2.jpg" alt="" title="">
+                                    </a>
+                                    <h6><a href="#"> Amazing post with all  goodies </a></h6>
+                                    <span> March 23, 2014 </span> 
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/blog_list3.jpg" alt="" title="">
+                                    </a>
+                                    <h6><a href="#"> Amazing post with all  goodies </a></h6>
+                                    <span> March 23, 2014 </span> 
+                                </li>
+                            </ul>
+                        </aside>
+                    </div>
+                    <div class="column dt-sc-one-fourth">
+                        <aside class="widget tweetbox">
+                            <h3 class="widgettitle yellow_sketch"><a href="#"> Фејсбук објаве </a></h3>
+                            <div id="tweets_container"></div>
+                        </aside>
+                    </div>
+                    <div class="column dt-sc-one-fourth">
+                        <aside class="widget widget_text">
+                        <h3 class="widgettitle steelblue_sketch">Контакт</h3>
+                            <div class="textwidget">
+                                <p class="dt-sc-contact-info"><span class="fa fa-map-marker"></span> Гандијева 114, Пирамида-коцкица <br>Нови Београд</p>
+                                <p class="dt-sc-contact-info"><span class="fa fa-phone"></span> (000) 233 - 3236 </p>
+                                <p class="dt-sc-contact-info"><span class="fa fa-envelope"></span><a href="mailto:yourname@somemail.com"> info@malimocart.rs </a></p>
+                            </div>
+                        </aside>
+                        <aside class="widget mailchimp">
+                            <p> Буди у току! </p>
+                            <form name="frmnewsletter" class="mailchimp-form" action="http://wedesignthemes.com/html/kidslife/php/subscribe.php" method="post">
+                                <p>
+                                    <span class="fa fa-envelope-o"> </span>
+                                    <input type="email" placeholder="Ваша И-мејл адреса" name="mc_email" required />	
+                                </p>	
+                                <input type="submit" value="Потврди" class="button" name="btnsubscribe">
+                            </form>
+                            <div id="ajax_subscribe_msg"></div>
+                        </aside>
+                    </div>
+                    
+                </div>    
+                <!--container ends-->
+            </div>
+            <!--footer-widgets-wrapper ends-->  
+            <div class="copyright">
+        		<div class="container">
+                	<p class="copyright-info">© 2017 Мали Моцарт. Сва права задржана.</p>
+        			<div class="footer-links">
+                        <p>Запратите нас!</p>
+                        <ul class="dt-sc-social-icons">
+                        	<li class="facebook"><a href="#"><img src="<?php echo $this->baseUrl('images/facebook.png');?>" alt="" title=""></a></li>
+                            <li class="twitter"><a href="#"><img src="<?php echo $this->baseUrl('images/twitter.png');?>" alt="" title=""></a></li>
+                            <li class="gplus"><a href="#"><img src="<?php echo $this->baseUrl('images/gplus.png');?>" alt="" title=""></a></li>
+                            <li class="pinterest"><a href="#"><img src="<?php echo $this->baseUrl('images/pinterest.png');?>" alt="" title=""></a></li>
+                        </ul>
+                    </div>
+        		</div>
+        	</div>  
+        </footer>
+        <!--footer ends-->
+        
+    </div>
+    <!--wrapper ends-->
+    <a href="#" title="Go to Top" class="back-to-top">На врх ↑</a>
+    <!--Java Scripts-->
+    <script type="text/javascript" src="<?php echo $this->baseUrl('/js/jquery.js');?>"></script>
+    <script type="text/javascript" src="<?php echo $this->baseUrl('/js/jquery-migrate.min.js');?>"></script>
+
+    <script type="text/javascript" src="<?php echo $this->baseUrl('/js/jquery.tabs.min.js');?>"></script>
+    <script type="text/javascript" src="<?php echo $this->baseUrl('/js/jquery.validate.min.js');?>"></script>
+    <script type="text/javascript" src="<?php echo $this->baseUrl('/js/jquery-easing-1.3.js');?>"></script>
+    <script type="text/javascript" src="<?php echo $this->baseUrl('/js/jquery.sticky.js');?>"></script>
+    <script type="text/javascript" src="<?php echo $this->baseUrl('/js/jquery.nicescroll.min.js');?>"></script>
+    <script type="text/javascript" src="<?php echo $this->baseUrl('/js/jquery.inview.js');?>"></script>
+    <script type="text/javascript" src="<?php echo $this->baseUrl('/js/validation.js');?>"></script>
+    <script type="text/javascript" src="<?php echo $this->baseUrl('/js/jquery.tipTip.minified.js');?>"></script>
+    <script type="text/javascript" src="<?php echo $this->baseUrl('/js/jquery.bxslider.min.js');?>"></script>       
+    <script type="text/javascript" src="<?php echo $this->baseUrl('/js/jquery.prettyPhoto.js');?>"></script>  
+    <script type="text/javascript" src="<?php echo $this->baseUrl('/js/twitter/jquery.tweet.min.js');?>"></script>
+    <script type="text/javascript" src="<?php echo $this->baseUrl('/js/jquery.parallax-1.1.3.js');?>"></script>   
+    <script type="text/javascript" src="<?php echo $this->baseUrl('/js/shortcodes.js');?>"></script>   
+    <script type="text/javascript" src="<?php echo $this->baseUrl('/js/custom.js');?>"></script>
+    <script type="text/javascript" src="<?php echo $this->baseUrl('js/jquery.carouFredSel-6.2.0-packed.js');?>"></script> 
+    
+    <!-- Layer Slider --> 
+    <script type="text/javascript" src="<?php echo $this->baseUrl('/js/jquery-transit-modified.js');?>"></script> 
+    <script type="text/javascript" src="<?php echo $this->baseUrl('/js/layerslider.kreaturamedia.jquery.js');?>"></script> 
+    <script type='text/javascript' src="<?php echo $this->baseUrl('/js/greensock.js');?>"></script> 
+    <script type='text/javascript' src="<?php echo $this->baseUrl('/js/layerslider.transitions.js');?>"></script> 
+    <!--<script type="text/javascript">var lsjQuery = jQuery;</script>--> 
+    <script type="text/javascript">var lsjQuery = jQuery;</script><script type="text/javascript"> lsjQuery(document).ready(function() { if(typeof lsjQuery.fn.layerSlider == "undefined") { lsShowNotice('layerslider_1','jquery'); } else { lsjQuery("#layerslider_4").layerSlider({responsiveUnder: 1170, layersContainer: 1170, skinsPath: 'js/layerslider/skins/'}) } }); </script>
+    </body>
+</html>
