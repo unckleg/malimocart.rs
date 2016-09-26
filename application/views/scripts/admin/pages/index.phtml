@@ -1,0 +1,165 @@
+<section id="content_wrapper">
+<header id="topbar" class="alt">
+       <div class="topbar-left">
+          <ol class="breadcrumb">
+             <li class="breadcrumb-link">
+                <a href="<?= $this->url(array('controller' => 'admin_dashboard', 'action' => 'index'), 'default', true);?>">CMS Почетна</a>
+             </li>
+             <li class="breadcrumb-link">
+                <a>Странице</a>
+             </li>
+             <li class="breadcrumb-current-item">Листа страница</li>
+          </ol>
+       </div>
+    </header>
+<?= $this->iconNavigation();?>
+<?= $this->systemMessagesHtml($this->systemMessages);?>
+<div id="content" class="table-layout animated fadeIn">
+   <div class="chute chute-center">
+      <div class="panels" style="padding-bottom: 125px;">
+         <div class="row">
+            <div class="col-md-12 grid" data-animate="[&quot;400&quot;,&quot;fadeIn&quot;]">
+               <div class="panel sort-disable panel-collapsed" id="p6">
+                  <div class="panel-heading">
+                     <span class="panel-title"> О Удружењу</span>
+                     <span class="panel-controls">
+                         <a href="#" class="panel-control-loader"></a>
+                         <a href="#" class="panel-control-collapse"></a>
+                         <a href="#" class="panel-control-fullscreen"></a>
+                     </span>
+                  </div>
+                  <div class="panel-body" style="display: none; padding: 0 30px 10px 30px !important;">
+                      <div class="panel" id="ckeditor" name="ckeditor" >
+                      </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-12 grid" data-animate="[&quot;400&quot;,&quot;fadeIn&quot;]">
+               <div class="panel sort-disable panel-collapsed" id="p7">
+                  <div class="panel-heading">
+                     <span class="panel-title"> Групна настава</span>
+                     <span class="panel-controls">
+                         <a href="#" class="panel-control-loader"></a>
+                         <a href="#" class="panel-control-collapse"></a>
+                         <a href="#" class="panel-control-fullscreen"></a>
+                     </span>
+                  </div>
+                  <div class="panel-body" style="display: none;">
+                    <?php foreach ($this->workshopgroup as $group):?>  
+                        <div class="col-sm-6 col-lg-4">  
+                            <div class="panel 
+                                 <?php if ($group['order_number'] == 1): ?>
+                                    panel-info 
+                                 <?php elseif ($group['order_number'] == 2):?>
+                                    panel-primary
+                                 <?php elseif ($group['order_number'] == 3):?>
+                                    panel-alert
+                                 <?php endif; ?>
+                                 panel-border top" style="padding: 28px 32px !important; box-shadow: 0px 1px 2px 1px #e5eaee;">
+                                <div class="panel-heading">
+                                <span class="panel-title pn"><?= $this->escape($group['title']);?></span>
+                                    <div class="widget-menu pull-right mr10">
+                                        <div class="switch switch-primary switch-inline switch-xs">
+                                            <a href="<?= $this->url(array('controller' => 'admin_pages', 'action' => 'edit', 'id' => $group['id']),'default', true);?>"> Измени</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <p class="p2" title="<?= $this->escape($group['short_description']);?>">
+                                     <?= $this->escape(mb_strlen($group['short_description']) 
+                                        > 90 ? mb_substr($group['short_description'], 0, 90) . "..." : $group['short_description']); ?>
+                                    </p>
+                                </div>
+                            </div>  
+                        </div>
+                    <?php endforeach; ?>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-12 grid" data-animate="[&quot;400&quot;,&quot;fadeIn&quot;]">
+               <div class="panel sort-disable panel-collapsed" id="p8">
+                  <div class="panel-heading">
+                     <span class="panel-title"> Индивидуална настава</span>
+                     <span class="panel-controls">
+                         <a href="#" class="panel-control-loader"></a>
+                         <a href="#" class="panel-control-collapse"></a>
+                         <a href="#" class="panel-control-fullscreen"></a>
+                     </span>
+                  </div>
+                  <div class="panel-body" style="display: none;">
+                    <?php foreach ($this->workshopindividual as $individual):?>   
+                      <div class="col-sm-6 col-lg-4" style="padding-bottom: 10px;">  
+                            <div class="panel 
+                                <?php if ($individual['order_number'] == 4): ?>
+                                   panel-info 
+                                <?php elseif ($individual['order_number'] == 5):?>
+                                   panel-primary
+                                <?php elseif ($individual['order_number'] == 6):?>
+                                   panel-alert
+                                <?php elseif ($individual['order_number'] == 7):?>
+                                    panel-alert
+                                <?php elseif ($individual['order_number'] == 8):?>
+                                    panel-primary
+                                <?php elseif ($individual['order_number'] == 9):?>
+                                    panel-info    
+                                <?php endif; ?>
+                                 panel-border top" style="padding: 28px 32px !important; box-shadow: 0px 1px 2px 1px #e5eaee;">
+                                <div class="panel-heading">
+                                    <span class="panel-title pn" title="<?= $this->escape($individual['title']);?>"><?= $this->escape(mb_strlen($individual['title']) 
+                                        > 16 ? mb_substr($individual['title'], 0, 16) . "..." : $individual['title']); ?></span>
+                                    <div class="widget-menu pull-right mr10">
+                                        <div class="switch switch-primary switch-inline switch-xs">
+                                            <a href="<?= $this->url(array('controller' => 'admin_pages', 'action' => 'edit', 'id' => $individual['id']),'default', true);?>"> Измени</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <p class="p2" title="<?= $this->escape($individual['short_description']);?>">
+                                     <?= $this->escape(mb_strlen($individual['short_description']) 
+                                        > 90 ? mb_substr($individual['short_description'], 0, 90) . "..." : $individual['short_description']); ?></p>
+                                </div>
+                            </div>  
+                        </div>
+                    <?php endforeach; ?>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+</section>
+<?php $this->inlineScript()->appendFile($this->baseUrl('/admin/js/ckeditor/ckeditor.js'));?>
+<script>
+<?php $this->inlineScript()->captureStart();?>
+   CKEDITOR.replace( 'ckeditor', {
+    toolbar: [
+    { name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Source', '-', 'Preview', 'Print', '-',] },
+    { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo' ] },
+    { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', ] },
+    { name: 'links', items: [ 'Link', 'Unlink' ] },
+    { name: 'insert', items: [ 'Image', 'Table', 'HorizontalRule'] },
+    '/',
+    { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', '-', 'RemoveFormat' ] },
+    { name: 'styles', items: [ 'Styles', 'Format' ] },
+    { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
+    { name: 'others', items: [ '-' ] },
+    { name: 'about', items: [ 'About' ] }
+],
+    contentsCss: [
+            '<?php echo $this->baseUrl('/css/nicdark_style.css');?>',
+            '<?php echo $this->baseUrl('/css/nicdark_responsive.css');?>',
+            '<?php echo $this->baseUrl('/css/jquery.modal.css');?>',
+            '<?php echo $this->baseUrl('/css/nicdark_shortcodes.css');?>',
+            'http://fonts.googleapis.com/css?family=Raleway'
+        ],
+    allowedContent: true,
+    height: 400
+});
+CKEDITOR.config.skin = 'office2013';
+<?php $this->inlineScript()->captureEnd();?>
+</script>

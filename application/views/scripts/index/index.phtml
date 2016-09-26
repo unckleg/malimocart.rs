@@ -1,101 +1,553 @@
-<div id="main">
-            <?php echo $this->indexSlider(); ?>
-            <!--primary starts-->
-            <section id="primary" class="content-full-width">
-                <!--container starts-->
-                <div class="container">
-                    
-                    <div class="dt-sc-one-fourth column first">
-                        <div class="dt-sc-ico-content type1">
-                            <div class="icon">
-                                <span class="icon-outer">
-                                    <img src="images/service1.jpg" alt="" title="">
-                                    <span class="infolayer">
-                                        <a href="<?= $this->url(array('controller' => 'about', 'action' => 'index'),'default', true) ?>">
-                                            <i class="fa fa-link">
-                                            </i>
-                                        </a>
-                                    </span>
-                                </span>
-                            </div>
-                            <h4><a href="<?= $this->url(array('controller' => 'about', 'action' => 'index'),'default', true) ?>">
-                                    О Нама
-                                </a>
-                            </h4>
-                            <p>Музички студио, или како га ми радије зовемо- ИГРАОНИЦА-РАДИОНИЦА-УЧИОНИЦА „Мали Моцарт“, отворен је са циљем да кроз занимљиве интерактивне садржаје и програме приближи и објасни музику...  
-                                <a href="<?= $this->url(array('controller' => 'about', 'action' => 'index'),'default', true) ?>"> детаљније</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="dt-sc-one-fourth column">
-                        <div class="dt-sc-ico-content type1">
-                            <div class="icon">
-                                <span class="icon-outer">
-                                    <img src="images/service2.jpg" alt="" title="">
-                                    <span class="infolayer">
-                                        <a href="<?= $this->url(array('controller' => 'workshop', 'action' => 'index'),'default', true) ?>">
-                                            <i class="fa fa-link">
-                                            </i>
-                                        </a>
-                                    </span>
-                                </span>
-                            </div>
-                            <h4><a href="<?= $this->url(array('controller' => 'workshop', 'action' => 'index'),'default', true) ?>">
-                                    Музичке радионице
-                                </a>
-                            </h4>
-                            <p>Свака радионица је намењена одређеном узрасту и има своју тему, то јест кроз различите радионице, учићемо различите занимљиве садржаје. Радионице су намењене најмлађим полазницима.... 
-                                <a href="<?= $this->url(array('controller' => 'workshop', 'action' => 'index'),'default', true) ?>">детаљније</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="dt-sc-one-fourth column">
-                        <div class="dt-sc-ico-content type1">
-                            <div class="icon">
-                                <span class="icon-outer">
-                                    <img src="images/service3.jpg" alt="" title="">
-                                    <span class="infolayer">
-                                        <a href="<?= $this->url(array('controller' => 'school', 'action' => 'index'),'default', true) ?>">
-                                            <i class="fa fa-link">
-                                            </i>
-                                        </a>
-                                    </span>
-                                </span>
-                            </div>
-                            <h4><a href="<?= $this->url(array('controller' => 'school', 'action' => 'index'),'default', true) ?>">
-                                    Настава
-                                </a>
-                            </h4>
-                            <p>Индивидуални и групни часови клавира, солфеђа, теорије музике, соло певања, популарна и филмска музика, увод у компоновање, мали хор, мали оркестар… 
-                                <a href="<?= $this->url(array('controller' => 'school', 'action' => 'index'),'default', true) ?>">детаљније</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="dt-sc-one-fourth column">
-                        <div class="dt-sc-ico-content type1">
-                            <div class="icon">
-                                <span class="icon-outer">
-                                    <img src="images/service4.jpg" alt="" title="">
-                                    <span class="infolayer">
-                                        <a href="<?= $this->url(array('controller' => 'teachers', 'action' => 'index'),'default', true) ?>">
-                                            <i class="fa fa-link">
-                                            </i>
-                                        </a>
-                                    </span>
-                                </span>
-                            </div>
-                            <h4><a href="<?= $this->url(array('controller' => 'teachers', 'action' => 'index'),'default', true) ?>">
-                                    Предавачи
-                                </a>
-                            </h4>
-                            <p>Наш стручни тим чини група младих дипломаца и мастера Музичке Академије, са великим досадашњним искуством у раду са најмлађима. Рад по светски признатим методама.... 
-                                <a href="<?= $this->url(array('controller' => 'teachers', 'action' => 'index'),'default', true) ?>">детаљније</a></p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="dt-sc-hr"></div>
+<!--start-->
+<!--start section-->
+<section class="nicdark_section">
+	<div class="tp-banner-container">
+		<div class="nicdark_slide1" >
+                    <?= $this->indexSlider(); ?>
+		</div>
+	</div>
+</section>
+<!--end section--><!--start section-->
+<section class="nicdark_section nicdark_margintop45_negative">
 
-            </section>
-            <!--primary ends-->
+    <!--start nicdark_container-->
+    <div class="nicdark_container nicdark_clearfix">
+		
+		<div class="grid grid_12 percentage nomargin">    
+			<div class="nicdark_textevidence center">
+			    <div class="nicdark_textevidence nicdark_width_percentage25 nicdark_bg_yellow nicdark_shadow nicdark_radius_left">
+			        <div class="nicdark_textevidence">
+			            <div class="nicdark_margin30">
+			                <h2 class="white subtitle"><a class="white" href="<?= $this->url(array(), 'blognews', true);?>">НОВОСТИ</a></h2>
+			           </div>
+			            <i class="nicdark_zoom icon-news nicdark_iconbg left extrabig yellow nicdark_displaynone_ipadland nicdark_displaynone_ipadpotr"></i>
+			        </div>
+			    </div>
+			    <div class="nicdark_textevidence nicdark_width_percentage25 nicdark_bg_orange nicdark_shadow">
+			        <div class="nicdark_textevidence">
+			            <div class="nicdark_margin30">
+			                <h2 class="white subtitle"><a class="white" href="">ДОГАЂАЈИ</a></h2>
+			           </div>
+			            <i class="nicdark_zoom icon-music-2 nicdark_iconbg left extrabig orange nicdark_displaynone_ipadland nicdark_displaynone_ipadpotr"></i>
+			        </div>
+			    </div>
+			    <div class="nicdark_textevidence nicdark_width_percentage25 nicdark_bg_green nicdark_shadow">
+			        <div class="nicdark_textevidence">
+			            <div class="nicdark_margin30">
+			                <h2 class="white subtitle"><a class="white" href="<?= $this->url(array(), 'teacherpage', true);?>">
+                                                ПРЕДАВАЧИ</a></h2>
+			           </div>
+			            <i class="nicdark_zoom icon-graduation-cap-1 nicdark_iconbg left extrabig green nicdark_displaynone_ipadland nicdark_displaynone_ipadpotr"></i>
+			        </div>
+			    </div>
+                            <div class="nicdark_textevidence nicdark_width_percentage25 nicdark_bg_blue nicdark_shadow nicdark_radius_right">
+			        <div class="nicdark_textevidence">
+			            <div class="nicdark_margin30">
+			                <h2 class="white subtitle"><a class="white" href="<?= $this->url(array(), 'signin', true);?>">ПРИЈАВА</a></h2>
+			           </div>
+			            <i class="nicdark_zoom icon-pencil-2 nicdark_iconbg left extrabig blue nicdark_displaynone_ipadland nicdark_displaynone_ipadpotr"></i>
+			        </div>
+			    </div>
+			    <div class="nicdark_space5"></div>
+			</div>
+		</div>
+
+	</div>
+    <!--end nicdark_container-->
+     
+</section>
+<!--end section--><!--start section-->
+<section class="nicdark_section">
+
+    <!--start nicdark_container-->
+    <div class="nicdark_container nicdark_clearfix">
+
+
+        <div class="nicdark_space50"></div>
+
+
+        <div class="grid grid_12">
+            <h1 class="subtitle greydark">МАЛИ МОЦАРТ</h1>
+            <div class="nicdark_space20"></div>
+            <h3 class="subtitle grey">Укратко о школици "Мали Моцарт"</h3>
+            <div class="nicdark_space20"></div>
+            <div class="nicdark_divider left big"><span class="nicdark_bg_yellow nicdark_radius"></span></div>
+            <div class="nicdark_space10"></div>
         </div>
+
+
+        <div class="grid grid_6 nicdark_relative">
+
+            <div class="nicdark_btn_iconbg nicdark_bg_yellow nicdark_absolute extrabig nicdark_shadow nicdark_radius">
+                <div>
+                    <i class="icon-music nicdark_iconbg left big white"></i> 
+                </div>
+            </div>
+            
+            <div class="nicdark_activity nicdark_marginleft100">
+                <h4>О ШКОЛИЦИ</h4>                        
+                <div class="nicdark_space10"></div>
+                <p style="text-align: justify;">Музички студио, или како га ми радије зовемо: ИГРАОНИЦА-РАДИОНИЦА-УЧИОНИЦА „Мали Моцарт“, 
+                    отворен је са циљем да кроз занимљиве интерактивне садржаје и програме приближи и објасни музику...
+                <a href="<?= $this->url(array(), 'aboutschool', true);?>" class="nicdark_btn red"><i class="icon-right-open-outline"></i> Детаљније</a></p>
+            </div>
+        
+        </div>
+
+        <div class="grid grid_6 nicdark_relative">
+            
+            <div class="nicdark_btn_iconbg nicdark_bg_orange nicdark_absolute extrabig nicdark_shadow nicdark_radius">
+                <div>
+                    <i class="icon-puzzle nicdark_iconbg left big white"></i> 
+                </div>
+            </div>
+            
+            <div class="nicdark_activity nicdark_marginleft100 ">
+                <h4>РАДИОНИЦЕ</h4>                        
+                <div class="nicdark_space10"></div>
+                <p>Свака радионица је намењена одређеном узрасту и има своју тему, то јест кроз различите радионице, 
+                    учићемо различите занимљиве садржаје. <br>
+                <a href="<?= $this->url(array(), 'workshopgroup', true);?>" class="nicdark_btn red"><i class="icon-right-open-outline"></i> Детаљније</a></p>
+            </div>   
+        </div>
+        
+        <div class="grid grid_6 nicdark_relative">
+            <div class="nicdark_btn_iconbg nicdark_bg_green nicdark_absolute extrabig nicdark_shadow nicdark_radius">
+                <div>
+                    <i class=" icon-pencil nicdark_iconbg left big white"></i> 
+                </div>
+            </div>
+            
+            <div class="nicdark_activity nicdark_marginleft100">
+                <h4>НАСТАВА</h4>                        
+                <div class="nicdark_space10"></div>
+                <p>Индивидуални и групни часови клавира, солфеђа, теорије музике, соло певања, популарна и филмска музика, 
+                    увод у компоновање, мали хор, мали оркестар…
+                <a href="<?= $this->url(array(), 'workshopgroup', true);?>" class="nicdark_btn red"><i class="icon-right-open-outline"></i> Детаљније</a></p>
+            </div>    
+        
+        </div>
+
+        <div class="grid grid_6 nicdark_relative">
+            <div class="nicdark_btn_iconbg nicdark_bg_blue nicdark_absolute extrabig nicdark_shadow nicdark_radius">
+                <div>
+                    <i class="icon-graduation-cap-1 nicdark_iconbg left big white"></i> 
+                </div>
+            </div>
+            
+            <div class="nicdark_activity nicdark_marginleft100">
+                <h4>ПРЕДАВАЧИ</h4>                        
+                <div class="nicdark_space10"></div>
+                <p>Наш стручни тим чини група младих дипломаца и мастера Музичке Академије, са великим досадашњним искуством
+                    у раду са најмлађима. Рад по светски признатим методама....
+                <a href="<?= $this->url(array(), 'teacherpage', true);?>" class="nicdark_btn red"><i class="icon-right-open-outline"></i> Детаљније</a></p>
+                <div class="nicdark_space20"></div>
+            </div>
+        </div>
+        <div class="nicdark_space50"></div>
+    </div>
+    <!--end nicdark_container-->
+</section>
+<!--end section-->
+<!--start section-->
+<div id="nicdark_parallax_2_btns" class="nicdark_section nicdark_imgparallax nicdark_parallax_img2">
+
+    <div class="nicdark_container nicdark_clearfix">
+    <div class="nicdark_space100"></div>
+    <div class="grid grid_12">
+        <h1 class="white center subtitle">УПИС ЈЕ У ТОКУ!</h1>
+        <div class="nicdark_space10"></div>
+        <h3 class="subtitle center white">УЧИОНИЦА ПОЧИЊЕ СА РАДОМ ОД 1.ОКТОБРА</h3>
+        <div class="nicdark_space20"></div>
+        <div class="nicdark_divider center big"><span class="nicdark_bg_white nicdark_radius"></span></div> 
+        <div class="nicdark_space20"></div>    
+    </div>
+    </div>
+    <div class="nicdark_countdown nicdark_container"></div> 
+    <div class="nicdark_space100"></div>
+            
+</div>
+<!--end section-->
+
+<!--<section class="nicdark_section">
+
+    start nicdark_container
+    <div class="nicdark_container nicdark_clearfix">
+
+
+        <div class="nicdark_space50"></div>
+
+        <div class="grid grid_12">
+            <h1 class="subtitle greydark">БЛОГ</h1>
+            <div class="nicdark_space20"></div>
+            <h3 class="subtitle grey">НАШЕ НАЈНОВИЈЕ ОБЈАВЕ</h3>
+            <div class="nicdark_space20"></div>
+            <div class="nicdark_divider left big"><span class="nicdark_bg_blue nicdark_radius"></span></div>
+            <div class="nicdark_space10"></div>
+        </div>
+
+        
+        <div class="nicdark_masonry_btns">
+            <div class="nicdark_margin10">
+                <a data-filter=".educational" class="nicdark_bg_grey2_hover nicdark_transition nicdark_btn nicdark_bg_grey small nicdark_shadow nicdark_radius grey">Све</a>
+            </div>
+            <div class="nicdark_margin10">
+                <a data-filter=".educational" class="nicdark_bg_grey2_hover nicdark_transition nicdark_btn nicdark_bg_grey small nicdark_shadow nicdark_radius grey">КАТЕГОРИЈА 1</a>
+            </div>
+            <div class="nicdark_margin10">
+                <a data-filter=".excursions" class="nicdark_bg_grey2_hover nicdark_transition nicdark_btn nicdark_bg_grey small nicdark_shadow nicdark_radius grey">КАТЕГОРИЈА 2</a>
+            </div>
+            <div class="nicdark_space10"></div>
+        </div>
+
+
+        start nicdark_masonry_container
+        <div class="nicdark_masonry_container">
+            <div class="grid grid_4 nicdark_masonry_item educational">
+                <div class="nicdark_archive1 nicdark_bg_blue nicdark_radius nicdark_shadow">
+                    
+                    <a href="single-post-right-sidebar.html" class="nicdark_zoom nicdark_btn_icon nicdark_bg_blue nicdark_border_bluedark white medium nicdark_radius_circle nicdark_absolute_left"><i class="icon-link-outline"></i></a>
+
+                    <img alt=""  src="img/blog/img1.jpg">
+                    
+                    <div class="nicdark_margin20">
+                        <h4 class="white">Објава 1</h4>
+                        <div class="nicdark_space20"></div>
+                        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                        <div class="nicdark_space20"></div>
+                        <p class="white">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet.</p>
+                        <div class="nicdark_space20"></div>
+                        <a href="single-post-right-sidebar.html" class="white nicdark_btn"><i class="icon-doc-text-1 "></i> Детаљније</a>                        
+                    </div>
+
+                    <i class="icon-camera-outline nicdark_iconbg right medium blue"></i>
+
+                </div>
+            </div>
+            <div class="grid grid_4 nicdark_masonry_item excursions">
+                <div class="nicdark_archive1 nicdark_bg_green nicdark_radius nicdark_shadow">
+                    
+                    <div class="nicdark_margin20">
+                        <h4 class="white">SEE OUR NEW DOWNLOAD AREA</h4>                        
+                        <div class="nicdark_space20"></div>
+                        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                        <div class="nicdark_space20"></div>
+                        <p class="white">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet.</p>
+                        <div class="nicdark_space20"></div>
+                        <a href="single-post-right-sidebar.html" class="white nicdark_btn"><i class="icon-doc-text-1 "></i> Read More</a>
+                    </div>
+
+                    <i class="icon-pencil-1 nicdark_iconbg right medium green"></i>
+
+                </div>
+            </div>
+
+            <div class="grid grid_4 nicdark_masonry_item educational">
+                <div class="nicdark_archive1 nicdark_bg_violet nicdark_radius nicdark_shadow">
+                    
+                    <a href="single-post-right-sidebar.html" class="nicdark_zoom nicdark_btn_icon nicdark_bg_violet nicdark_border_violetdark white medium nicdark_radius_circle nicdark_absolute_left"><i class="icon-link-outline"></i></a>
+
+                    <img alt=""  src="img/blog/img2.jpg">
+                    
+                    <div class="nicdark_margin20">
+                        <h4 class="white">Објава 2</h4> 
+                        <div class="nicdark_space20"></div>
+                        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                        <div class="nicdark_space20"></div>
+                        <p class="white">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet.</p>
+                        <div class="nicdark_space20"></div>
+                        <a href="single-post-right-sidebar.html" class="white nicdark_btn"><i class="icon-doc-text-1 "></i> Детаљније</a>   
+                    </div>
+
+                    <i class="icon-picture-outline nicdark_iconbg right medium violet"></i>
+
+                </div>
+            </div>
+            
+            <div class="grid grid_4 nicdark_masonry_item excursions">
+                <div class="nicdark_archive1 nicdark_bg_orange nicdark_radius nicdark_shadow">
+                    
+                    <a href="single-post-right-sidebar.html" class="nicdark_zoom nicdark_btn_icon nicdark_bg_orange nicdark_border_orangedark white medium nicdark_radius_circle nicdark_absolute_left"><i class="icon-link-outline"></i></a>
+
+                    <img alt=""  src="img/blog/img4.jpg">
+                    
+                    <div class="nicdark_margin20">
+                        <h4 class="white">MUSIC ACTIVITIES FOR ALL</h4>                        
+                    </div>
+
+                    <i class="icon-camera-outline nicdark_iconbg right medium orange"></i>
+
+                </div>
+            </div>
+            <div class="grid grid_4 nicdark_masonry_item excursions">
+                <div class="nicdark_archive1 nicdark_bg_red nicdark_radius nicdark_shadow">
+                    
+                    <a href="single-post-right-sidebar.html" class="nicdark_zoom nicdark_btn_icon nicdark_bg_red nicdark_border_reddark white medium nicdark_radius_circle nicdark_absolute_left"><i class="icon-link-outline"></i></a>
+
+                    <img alt=""  src="img/blog/img3.jpg">
+                    
+                    <div class="nicdark_margin20">
+                        <h4 class="white">CHRISTMAS PARTY !</h4>
+                        <div class="nicdark_space20"></div>
+                        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                        <div class="nicdark_space20"></div>
+                        <p class="white">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet.</p>
+                        <div class="nicdark_space20"></div>
+                        <a href="single-post-right-sidebar.html" class="white nicdark_btn"><i class="icon-doc-text-1 "></i> Read More</a>                        
+                    </div>
+
+                    <i class="icon-pencil-1 nicdark_iconbg right medium red"></i>
+
+                </div>
+            </div>
+            <div class="grid grid_4 nicdark_masonry_item excursions">
+                <div class="nicdark_archive1 nicdark_bg_green nicdark_radius nicdark_shadow">
+                    
+                    <a href="single-post-right-sidebar.html" class="nicdark_zoom nicdark_btn_icon nicdark_bg_green nicdark_border_greendark white medium nicdark_radius_circle nicdark_absolute_left"><i class="icon-link-outline"></i></a>
+
+                    <img alt=""  src="img/blog/img5.jpg">
+                    
+                    <div class="nicdark_margin20">
+                        <h4 class="white">BIO SPECIAL MEAL</h4>
+                        <div class="nicdark_space20"></div>
+                        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                        <div class="nicdark_space20"></div>
+                        <p class="white">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet.</p>
+                        <div class="nicdark_space20"></div>
+                        <a href="single-post-right-sidebar.html" class="white nicdark_btn"><i class="icon-doc-text-1 "></i> Read More</a>                        
+                    </div>
+
+                    <i class="icon-picture-outline nicdark_iconbg right medium green"></i>
+
+                </div>
+            </div>
+            <div class="grid grid_4 nicdark_masonry_item educational">
+                <div class="nicdark_archive1 nicdark_bg_yellow nicdark_radius nicdark_shadow">
+                    
+                    <a href="single-post-right-sidebar.html" class="nicdark_zoom nicdark_btn_icon nicdark_bg_yellow nicdark_border_yellowdark white medium nicdark_radius_circle nicdark_absolute_left"><i class="icon-link-outline"></i></a>
+
+                    <img alt=""  src="img/blog/img7.jpg">
+                    
+                    <div class="nicdark_margin20">
+                        <h4 class="white">Објава 3</h4>
+                        <div class="nicdark_space20"></div>
+                        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                        <div class="nicdark_space20"></div>
+                        <p class="white">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet.</p>
+                        <div class="nicdark_space20"></div>
+                        <a href="single-post-right-sidebar.html" class="white nicdark_btn"><i class="icon-doc-text-1 "></i> Детаљније</a>                        
+                    </div>
+
+                    <i class="icon-pencil-1 nicdark_iconbg right medium yellow"></i>
+
+                </div>
+            </div>
+            <div class="grid grid_4 nicdark_masonry_item excursions">
+                <div class="nicdark_archive1 nicdark_bg_blue nicdark_radius nicdark_shadow">
+                    
+                    <a href="single-post-right-sidebar.html" class="nicdark_zoom nicdark_btn_icon nicdark_bg_blue nicdark_border_bluedark white medium nicdark_radius_circle nicdark_absolute_left"><i class="icon-link-outline"></i></a>
+
+                    <img alt=""  src="img/blog/img8.jpg">
+                    
+                    <div class="nicdark_margin20">
+                        <h4 class="white">END OF THE SCHOOL YEAR</h4>
+                        <div class="nicdark_space20"></div>
+                        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                        <div class="nicdark_space20"></div>
+                        <p class="white">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet.</p>
+                        <div class="nicdark_space20"></div>
+                        <a href="single-post-right-sidebar.html" class="white nicdark_btn"><i class="icon-doc-text-1 "></i> Read More</a>                        
+                    </div>
+
+                    <i class="icon-camera-outline nicdark_iconbg right medium blue"></i>
+
+                </div>
+            </div>
+
+            <div class="grid grid_4 nicdark_masonry_item excursions">
+                <div class="nicdark_archive1 nicdark_bg_orange nicdark_radius nicdark_shadow">
+                    
+                    <a href="single-post-right-sidebar.html" class="nicdark_zoom nicdark_btn_icon nicdark_bg_orange nicdark_border_orangedark white medium nicdark_radius_circle nicdark_absolute_left"><i class="icon-link-outline"></i></a>
+
+                    <img alt=""  src="img/blog/img6.jpg">
+                    
+                    <div class="nicdark_margin20">
+                        <h4 class="white">EXCURSION PRESENTATION</h4>
+                    </div>
+
+                    <i class="icon-picture-outline nicdark_iconbg right medium orange"></i>
+
+                </div>
+            </div>
+
+            <div class="grid grid_4 nicdark_masonry_item excursions">
+                <div class="nicdark_archive1 nicdark_bg_red nicdark_radius nicdark_shadow">
+                    
+                    <div class="nicdark_margin20">
+                        <h4 class="white">DOCTOR IN THE SCHOOL</h4>                        
+                        <div class="nicdark_space20"></div>
+                        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                        <div class="nicdark_space20"></div>
+                        <p class="white">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet.</p>
+                        <div class="nicdark_space20"></div>
+                        <a href="single-post-right-sidebar.html" class="white nicdark_btn"><i class="icon-doc-text-1 "></i> Read More</a>
+                    </div>
+
+                    <i class="icon-pencil-1 nicdark_iconbg right medium red"></i>
+
+                </div>
+            </div>
+
+        </div>
+        end nicdark_masonry_container
+
+    </div>
+    end nicdark_container
+            
+</section>-->
+<!--end section-->
+
+<!--start section-->
+<!--<section class="nicdark_section">
+
+
+    start nicdark_container
+    <div class="nicdark_container nicdark_clearfix">
+
+        <div class="nicdark_space30"></div>
+
+        <div class="grid grid_12">
+            <div class="nicdark_textevidence center">
+                <a href="blog-masonry.html" class="nicdark_zoom nicdark_btn nicdark_bg_blue medium nicdark_shadow nicdark_radius white nicdark_margin10"><i class="icon-th-outline"></i>&nbsp;&nbsp;&nbsp;УЧИТАЈ ЈОШ</a>
+            </div>
+        </div>
+
+        <div class="nicdark_space40"></div>
+
+    </div>
+    end nicdark_container
+
+            
+</section>-->
+<!--end section-->
+<!--end-->
+<script type="text/javascript">
+<?php $this->inlineScript()->captureStart();?>    
+	jQuery(document).ready(function() {
+		//START SLIDE
+		jQuery('.nicdark_slide1').show().revolution(
+		{
+			dottedOverlay:"none",
+			delay:16000,
+			startwidth:1170,
+			startheight:650,
+			hideThumbs:200,
+			
+			thumbWidth:100,
+			thumbHeight:50,
+			thumbAmount:5,
+			
+			navigationType:"none",
+			navigationArrows:"solo",
+			navigationStyle:"preview2",
+			
+			touchenabled:"on",
+			onHoverStop:"on",
+			
+			swipe_velocity: 0.7,
+			swipe_min_touches: 1,
+			swipe_max_touches: 1,
+			drag_block_vertical: false,
+									
+			parallax:"mouse",
+			parallaxBgFreeze:"on",
+			parallaxLevels:[7,4,3,2,5,4,3,2,1,0],
+									
+			keyboardNavigation:"off",
+			
+			navigationHAlign:"center",
+			navigationVAlign:"bottom",
+			navigationHOffset:0,
+			navigationVOffset:20,
+
+			soloArrowLeftHalign:"left",
+			soloArrowLeftValign:"center",
+			soloArrowLeftHOffset:20,
+			soloArrowLeftVOffset:0,
+
+			soloArrowRightHalign:"right",
+			soloArrowRightValign:"center",
+			soloArrowRightHOffset:20,
+			soloArrowRightVOffset:0,
+					
+			shadow:0,
+			fullWidth:"on",
+			fullScreen:"off",
+
+			spinner:"spinner4",
+			
+			stopLoop:"off",
+			stopAfterLoops:-1,
+			stopAtSlide:-1,
+
+			shuffle:"off",
+			
+			autoHeight:"off",						
+			forceFullWidth:"off",						
+									
+			hideTimerBar: "on",					
+									
+			hideThumbsOnMobile:"off",
+			hideNavDelayOnMobile:1500,						
+			hideBulletsOnMobile:"off",
+			hideArrowsOnMobile:"off",
+			hideThumbsUnderResolution:0,
+			
+			hideSliderAtLimit:0,
+			hideCaptionAtLimit:0,
+			hideAllCaptionAtLilmit:0,
+			startWithSlide:0,
+			videoJsPath:"rs-plugin/videojs/",
+			fullScreenOffsetContainer: ""	
+		});
+		//END SLIDE
+		
+		
+
+		//START PARALLAX SECTIONS
+		$('#nicdark_parallax_big_image').parallax("50%", 0.3);
+		$('#nicdark_parallax_2_btns').parallax("50%", 0.3);
+		$('#nicdark_parallax_countdown').parallax("50%", 0.3);
+		$('#nicdark_parallax_counter').parallax("50%", 0.3);
+		//END PARALLAX SECTIONS
+
+	});
+	jQuery(document).ready(function() {
+
+		//START PARALLAX SECTIONS
+		$('#nicdark_parallax_countdown').parallax("50%", 0.3);
+		//END PARALLAX SECTIONS
+
+
+        //START COUNTDOWN GRID SECTION
+        //variables
+        var endDate = "Octobre 1, 2016 20:00:00";
+        var grid = "grid_3";
+        //insert the class nicdark_displaynone in the var if you wnat to hide the visualization
+        var display_years = "nicdark_displaynone";
+        var display_days = "";
+        var display_hours = "";
+        var display_minutes = "";
+        var display_seconds = "";
+        //call
+        $(".nicdark_countdown").countdown({
+          date: endDate,
+          render: function(data) {
+            $(this.el).html("<div class=\"grid "+ grid +" "+ display_years +" \"><div class=\"nicdark_textevidence center\"><h1 class=\"subtitle white extrasize\">"+ this.leadingZeros(data.years, 4) +"</h1><div class=\"nicdark_space20\"></div><a class=\"nicdark_btn nicdark_bg_blue small nicdark_shadow nicdark_radius white\">ГОДИНА</a><div class=\"nicdark_space5\"></div></div></div><div class=\"grid "+ grid +" "+ display_days +"  \"><div class=\"nicdark_textevidence center\"><h1 class=\"subtitle white extrasize\">"+ this.leadingZeros(data.days, 3) +"</h1><div class=\"nicdark_space20\"></div><a class=\"nicdark_btn nicdark_bg_blue small nicdark_shadow nicdark_radius white\">ДАНА</a><div class=\"nicdark_space5\"></div></div></div><div class=\"grid "+ grid +" "+ display_hours +"  \"><div class=\"nicdark_textevidence center\"><h1 class=\"subtitle white extrasize\">"+ this.leadingZeros(data.hours, 2) +"</h1><div class=\"nicdark_space20\"></div><a class=\"nicdark_btn nicdark_bg_yellow small nicdark_shadow nicdark_radius white\">САТИ</a><div class=\"nicdark_space5\"></div></div></div><div class=\"grid "+ grid +" "+ display_minutes +"  \"><div class=\"nicdark_textevidence center\"><h1 class=\"subtitle white extrasize\">"+ this.leadingZeros(data.min, 2) +"</h1><div class=\"nicdark_space20\"></div><a class=\"nicdark_btn nicdark_bg_green small nicdark_shadow nicdark_radius white\">МИНУТА</a><div class=\"nicdark_space5\"></div></div></div><div class=\"grid "+ grid +" "+ display_seconds +"  \"><div class=\"nicdark_textevidence center\"><h1 class=\"subtitle white extrasize\">"+ this.leadingZeros(data.sec, 2) +"</h1><div class=\"nicdark_space20\"></div><a class=\"nicdark_btn nicdark_bg_violet small nicdark_shadow nicdark_radius white\">СЕКУНДИ</a><div class=\"nicdark_space5\"></div></div></div>");
+          }
+        });
+        //END COUNTDOWN GRID SECTION
+
+	});
+<?php $this->inlineScript()->captureEnd();?>            
+</script>

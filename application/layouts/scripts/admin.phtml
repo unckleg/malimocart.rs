@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <?php echo $this->headTitle('MM CMS')->setSeparator(' | ');?>
+      <meta name="keywords" content="HTML5, Bootstrap 3, Admin Template, UI Theme"/>
+      <meta name="description" content="AdminK - A Responsive HTML5 Admin UI Framework">
+      <meta name="author" content="<djordjewebdizajn@gmail.com>">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <?php echo $this->headMeta();?>
+      <link rel="shortcut icon" href="<?= $this->baseUrl('/admin/img/favicon.png');?>">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+      <link rel="stylesheet" type="text/css" href="<?= $this->baseUrl('/admin/fonts/icomoon/icomoon.css');?>">
+      <link rel="stylesheet" type="text/css" href="<?= $this->baseUrl('/admin/fonts/animatedsvgicons/css/codropsicons.css');?>">
+      <link rel="stylesheet" type="text/css" href="<?= $this->baseUrl('/admin/js/plugins/magnific/magnific-popup.css');?>">
+      <link rel="stylesheet" type="text/css" href="<?= $this->baseUrl('/admin/js/plugins/c3charts/c3.min.css');?>">
+      <link rel="stylesheet" type="text/css" href="<?= $this->baseUrl('/admin/allcp/forms/css/forms.css');?>">
+      <link rel="stylesheet" type="text/css" href="<?= $this->baseUrl('/admin/js/utility/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.min.css');?>">
+      <link rel="stylesheet" type="text/css" href="<?= $this->baseUrl('/admin/skin/default_skin/less/theme.css');?>">
+      <?php echo $this->headLink();?>
+      <?php echo $this->headStyle();?>
+      <link href="https://cdn.jsdelivr.net/entypo-fontello/0.1/entypo.woff" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/entypo-fontello/0.1/entypo.ttf" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/entypo-fontello/0.1/entypo.css" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+      <?php echo $this->headScript();?>
+   </head>
+   <body class="dashboard-page">
+      <div id="main">
+         <header class="navbar navbar-fixed-top ">
+            <form class="navbar-form navbar-left search-form square" role="search">
+               <div class="input-group add-on">
+                  <input type="text" class="form-control btn-hover-effects" placeholder="Претражи..." onfocus="this.placeholder=''" onblur="this.placeholder='Search...'">
+                  <button class="btn btn-default text-info-darker hidden-xs hidden-sm" type="submit">
+                  <i class="glyphicon glyphicon-search"></i>
+                  </button>
+               </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+               <li class="hidden-xs">
+                  <div class="navbar-btn btn-group phn">
+                     <button class="btn-hover-effects topbar-dropmenu-toggle btn">
+                     <span class="fa fa-magic fs20 text-dark"></span>
+                     </button>
+                  </div>
+               </li>
+               <li class="dropdown dropdown-fuse">
+                  <div class="navbar-btn btn-group">
+                     <button class="dropdown-toggle btn btn-hover-effects" data-toggle="dropdown">
+                     <span class="fa fa-plus fs20 text-danger"></span>
+                     <span class="fs14 visible-xl">
+                     6
+                     </span>
+                     </button>
+                     <div class="navbar-activity dropdown-menu keep-dropdown w375" role="menu">
+                        <div class="panel mbn">
+                           <div class="panel-menu">
+                              <div class="btn-group btn-group-justified btn-group-nav" role="tablist">
+                                 <a href="#nav-tab1" data-toggle="tab" class="btn btn-sm active">Пријаве</a>
+                              </div>
+                           </div>
+                           <div class="panel-body pn">
+                              <div class="tab-content br-n pn">
+                                 <div id="nav-tab1" class="tab-pane active" role="tabpanel">
+                                    <ul class="media-list" role="menu">
+                                       <li class="media">
+                                          <a class="media-left" href="#">
+                                          <img src="<?= $this->baseUrl('/admin/img/avatars/1.png');?>" class="br3" alt="avatar">
+                                          </a>
+                                          <div class="media-body">
+                                             <h5 class="media-heading">New post
+                                                <span class="text-muted">- 09/01/16</span>
+                                             </h5>
+                                             Last Updated 5 days ago by
+                                             <a class="" href="#"> Anna Smith </a>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="panel-footer text-center">
+                              <a href="#" class="btn btn-warning"> Погледај све </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <li class="dropdown dropdown-fuse">
+                  <div class="navbar-btn btn-group">
+                     <button class="dropdown-toggle btn btn-hover-effects" data-toggle="dropdown">
+                     <span class="fa fa-envelope fs20 text-info-darker"></span>
+                     <span class="fs14 visible-xl">
+                     8
+                     </span>
+                     </button>
+                     <div class="navbar-activity dropdown-menu keep-dropdown w375" role="menu">
+                        <div class="panel mbn">
+                           <div class="panel-menu">
+                              <div class="btn-group btn-group-nav" role="tablist">
+                                 <a href="#nav-tab4" data-toggle="tab" class="btn btn-primary btn-sm active">Поруке</a>
+                              </div>
+                              <button class="btn btn-xs" type="button"><i class="fa fa-refresh"></i>
+                              </button>
+                           </div>
+                           <div class="panel-body pn">
+                              <div class="tab-content br-n pn">
+                                 <div id="nav-tab4" class="tab-pane active" role="tabpanel">
+                                    <ol class="timeline-list">
+                                       <li class="timeline-item">
+                                          <div class="timeline-icon light">
+                                             <span class="fa fa-envelope"></span>
+                                          </div>
+                                          <div class="timeline-desc">
+                                             <b>John Doe <span>-</span> <span class="timeline-date">3:16 am</span></b>
+                                             Sent you a message.
+                                             <a href="#">View now</a>
+                                          </div>
+                                       </li>
+                                    </ol>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="panel-footer text-center">
+                              <a href="#" class="btn btn-warning btn-sm"> Погледај све </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <li class="dropdown dropdown-fuse navbar-user">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <img class="btn-hover-effects" src="<?= $this->baseUrl('/admin/img/avatars/profile_avatar.jpg');?>" alt="avatar">
+                  <span class="hidden-xs">
+                  <?php $user = Zend_Auth::getInstance()->getIdentity() ;?>
+                  <span class="name"><?= $this->escape($user['first_name']);?></span>
+                  </span>
+                  <span class="fa fa-caret-down hidden-xs"></span>
+                  </a>
+                  <ul class="dropdown-menu list-group keep-dropdown w230" role="menu">
+                     <li class="list-group-item">
+                        <span class="fa fa-cog"></span>
+                        <a href="#" class="">
+                        Подешавања
+                        </a>
+                     </li>
+                     <li class="dropdown-footer text-center">
+                        <a href="<?= $this->url(array('controller' => 'admin_login', 'action' => 'logout'), 'default', true);?>" class="btn btn-warning">
+                        Одјављивање
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </header>
+         <aside id="sidebar_left" class="nano affix">
+            <div class="sidebar-left-content nano-content">
+               <header class="sidebar-header">
+                  <div class="sidebar-widget logo-widget">
+                     <div class="media">
+                        <div class="logo-slogan" style="text-align: left !important; margin-left: 38px !important;">
+                           <div>ММ<span class="text-info"> CMS</span></div>
+                        </div>
+                     </div>
+                  </div>
+               </header>
+               <ul class="nav sidebar-menu">
+                  <li class="sidebar-label pt25">Веб Сајт</li>
+                   <li>
+                    <a href="<?= $this->baseUrl('/');?>" target="_blank">
+                     <span class="caret"></span>
+                     <span class="sidebar-title">Веб сајт</span>
+                     <span class="sb-menu-icon fa fa-share-square-o"></span>
+                     </a>
+                  </li>
+                  <li class="sidebar-label pt25">CMS</li>
+                  <li>
+                     <a href="<?= $this->url(array('controller' => 'admin_dashboard', 'action' => 'index'),'default', true);?>">
+                     <span class="caret"></span>
+                     <span class="sidebar-title">CMS Почетна</span>
+                     <span class="sb-menu-icon fa fa-share-square-o"></span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                     <span class="caret"></span>
+                     <span class="sidebar-title">CMS Подешавања</span>
+                     <span class="sb-menu-icon fa fa-share-square-o"></span>
+                     </a>
+                  </li>
+                  <li class="sidebar-label pt25">БЛОГ</li>
+                  <li>
+                     <a class="accordion-toggle" href="#">
+                     <span class="caret"></span>
+                     <span class="sidebar-title">Опште</span>
+                     <span class="sb-menu-icon fa fa-share-square-o"></span>
+                     </a>
+                     <ul class="nav sub-nav">
+                        <li>
+                           <a href="index2.html">
+                           Листа објава
+                           </a>
+                        </li>
+                        <li>
+                           <a href="sales-stats-products.html">
+                           Нова објава
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a class="accordion-toggle" href="#">
+                     <span class="caret"></span>
+                     <span class="sidebar-title">Категорије</span>
+                     <span class="sb-menu-icon fa fa-share-square-o"></span>
+                     </a>
+                     <ul class="nav sub-nav">
+                        <li>
+                           <a href="index2.html">
+                           Листа категорија
+                           </a>
+                        </li>
+                        <li>
+                           <a href="sales-stats-products.html">
+                           Нова категорија
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a class="accordion-toggle" href="#">
+                     <span class="caret"></span>
+                     <span class="sidebar-title">Ознаке</span>
+                     <span class="sb-menu-icon fa fa-share-square-o"></span>
+                     </a>
+                     <ul class="nav sub-nav">
+                        <li>
+                           <a href="index2.html">
+                           Листа ознака
+                           </a>
+                        </li>
+                        <li>
+                           <a href="sales-stats-products.html">
+                           Нова ознака
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  
+                  <li class="sidebar-label pt25">МЕНАЏМЕНТ</li>
+                  <li>
+                     <a class="accordion-toggle" href="#">
+                     <span class="caret"></span>
+                     <span class="sidebar-title">Странице</span>
+                     <span class="sb-menu-icon fa fa-share-square-o"></span>
+                     </a>
+                     <ul class="nav sub-nav">
+                        <li>
+                           <a href="<?= $this->url(array('controller' => 'admin_pages', 'action' => 'index'),'default', true);?>">
+                           Листа страница
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="<?= $this->url(array('controller' => 'admin_filemanager', 'action' => 'index'),'default', true);?>">
+                     <span class="caret"></span>
+                     <span class="sidebar-title">Фајл менаџер</span>
+                     <span class="sb-menu-icon fa fa-share-square-o"></span>
+                     </a>
+                  </li>
+                  <li>
+                     <a class="accordion-toggle" href="#">
+                     <span class="caret"></span>
+                     <span class="sidebar-title">Галерије</span>
+                     <span class="sb-menu-icon fa fa-share-square-o"></span>
+                     </a>
+                     <ul class="nav sub-nav">
+                        <li>
+                           <a href="index2.html">
+                           Листа галерија
+                           </a>
+                        </li>
+                        <li>
+                           <a href="sales-stats-products.html">
+                           Нова галерија
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a class="accordion-toggle" href="#">
+                     <span class="caret"></span>
+                     <span class="sidebar-title">Поруке</span>
+                     <span class="sb-menu-icon fa fa-share-square-o"></span>
+                     </a>
+                     <ul class="nav sub-nav">
+                        <li>
+                           <a href="index2.html">
+                           Листа порука
+                           </a>
+                        </li>
+                        <li>
+                           <a href="sales-stats-products.html">
+                           Нова порука
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a class="accordion-toggle" href="#">
+                     <span class="caret"></span>
+                     <span class="sidebar-title">Пријављени</span>
+                     <span class="sb-menu-icon fa fa-share-square-o"></span>
+                     </a>
+                     <ul class="nav sub-nav">
+                        <li>
+                           <a href="index2.html">
+                           Листа пријављених
+                           </a>
+                        </li>
+                        <li>
+                           <a href="sales-stats-products.html">
+                           Нова пријава
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  
+               </ul>
+            </div>
+         </aside>
+        <?= $this->layout()->content; ?>
+      </div>
+      <script src="<?= $this->baseUrl('/admin/js/jquery/jquery-1.12.3.min.js');?>"></script>
+      <script src="<?= $this->baseUrl('/admin/js/jquery/jquery_ui/jquery-ui.min.js');?>"></script>
+        <script src="<?= $this->baseUrl('/admin/fonts/animatedsvgicons/js/snap.svg-min.js');?>"></script>
+      <script src="<?= $this->baseUrl('/admin/fonts/animatedsvgicons/js/svgicons-config.js');?>"></script>
+      <script src="<?= $this->baseUrl('/admin/fonts/animatedsvgicons/js/svgicons.js');?>"></script>
+      <script src="<?= $this->baseUrl('/admin/fonts/animatedsvgicons/js/svgicons-init.js');?>"></script>
+      <script src="<?= $this->baseUrl('/admin/js/utility/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.concat.min.js');?>"></script>
+      <script src="<?= $this->baseUrl('/admin/js/utility/utility.js');?>"></script>
+      <script src="<?= $this->baseUrl('/admin/js/demo/demo.js');?>"></script>
+      <script src="<?= $this->baseUrl('/admin/js/main.js');?>"></script>
+      <script src="<?= $this->baseUrl('/admin/js/demo/widgets_sidebar.js');?>"></script>
+      <script src="<?= $this->baseUrl('/admin/js/pages/dashboard1.js');?>"></script>
+      <script src="<?= $this->baseUrl('/admin/js/demo/widgets.js');?>"></script>
+      <!--Scripts -->
+      <?= $this->inlineScript();?>
+   </body>
+</html>
+
+

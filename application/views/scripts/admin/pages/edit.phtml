@@ -1,0 +1,102 @@
+<?php
+$this->headTitle('Изменa елемента');
+$form = $this->form;
+$form->setElementDecorators(array('ViewHelper'));
+?>
+<section id="content_wrapper">
+<header id="topbar" class="alt">
+   <div class="topbar-left">
+      <ol class="breadcrumb">
+         <li class="breadcrumb-link">
+            <a href="<?= $this->url(array('controller' => 'admin_dashboard', 'action' => 'index'), 'default', true);?>">CMS Почетна</a>
+         </li>
+         <li class="breadcrumb-link">
+            <a href="<?= $this->url(array('controller' => 'admin_pages', 'action' => 'index'), 'default', true);?>">Странице</a>
+         </li>
+         <li class="breadcrumb-current-item">Измена елемента</li>
+      </ol>
+   </div>
+</header>
+<?= $this->iconNavigation();?>
+<?= $this->systemMessagesHtml($this->systemMessages);?>
+<div id="content" class="table-layout animated fadeIn">
+<div class="col-md-6">
+    <div class="panel">
+       <div class="panel-heading">
+          <span class="panel-title">Измена наставног елемента</span>
+       </div>
+       <div class="panel-body">
+           <form class="form-horizontal" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="task" value="update">
+             <div class="form-group">
+                <label for="inputStandard" class="col-lg-3 control-label">Наслов</label>
+                <div class="col-lg-8">
+                    <?php
+                    echo $form->getElement('title')->setAttribs(array(
+                        'class' => 'form-control',
+                        'placeholder' => 'Унесите наслов овде...',
+                        'id' => 'inputStandard'
+                    ));
+                    ?>
+                </div>
+             </div>
+             <div class="form-group">
+                <label class="col-lg-3 control-label" for="textArea1">Кратак опис</label>
+                <div class="col-lg-8">
+                    <?php
+                    echo $form->getElement('short_description')->setAttribs(array(
+                        'class' => 'form-control textarea-grow',
+                        'placeholder' => 'Унесите кратак опис овде...',
+                        'id' => 'textArea1',
+                        'rows' => 4
+                    ));
+                    ?>
+                   </div>
+             </div>
+             <div class="form-group">
+                <label class="col-lg-3 control-label" for="textArea2">Опис</label>
+                <div class="col-lg-8">
+                    <?php
+                    echo $form->getElement('description')->setAttribs(array(
+                        'class' => 'form-control textarea-grow',
+                        'placeholder' => 'Унесите опис овде...',
+                        'id' => 'textArea2',
+                        'rows' => 8
+                    ));
+                    ?>
+                 </div>
+             </div>
+             <div class="form-group">
+                <label class="col-lg-3 control-label" for="textArea2">Фотографија</label>
+                <div class="col-lg-8">    
+                <div class="fileupload fileupload-new" data-provides="fileupload">
+                   <div class="fileupload-preview thumbnail mb20">
+                      <img src="<?= $this->workshopImgUrl($this->workshop);?>" alt="fotografija-radionice">
+                   </div>
+                    <div class="row" style="display: none;">
+                      <div class="col-xs-5">
+                         <span class="btn btn-primary btn-file btn-block">
+                         <span class="fileupload-new">Изабери</span>
+                         <span class="fileupload-exists">Измени</span>
+                         <input type="file" name="workshop_photo">
+                         </span>
+                      </div>
+                   </div>
+                </div>
+                </div> 
+             </div>
+            <label class="col-lg-3 control-label" for="textArea2"></label>
+            <div class="col-lg-8">
+                <div class="section text-right">
+                    <button type="submit" class="btn btn-primary fs14 ph40">Сачувај</button>
+                </div>
+            </div>
+          </form>
+       </div>
+    </div>
+ </div>
+</div>
+</section>
+<?php $this->inlineScript()->appendFile($this->baseUrl('/admin/js/pages/user-forms-image-tools.js'));?>
+<?php $this->inlineScript()->appendFile($this->baseUrl('/admin/js/plugins/holder/holder.min.js'));?>
+<?php $this->inlineScript()->appendFile($this->baseUrl('/admin/js/plugins/fileupload/fileupload.js'));?>

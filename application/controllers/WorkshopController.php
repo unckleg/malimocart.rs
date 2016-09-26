@@ -6,13 +6,13 @@ class WorkshopController extends Zend_Controller_Action
     {
         
     }
-    public function groupAction()
-    {
-
-    }
     public function individualAction()
     {
-
+        
+    }
+    public function groupAction()
+    {
+        
     }
 }
 
