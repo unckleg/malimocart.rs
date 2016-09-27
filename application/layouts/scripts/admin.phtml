@@ -13,10 +13,11 @@
       <link rel="stylesheet" type="text/css" href="<?= $this->baseUrl('/admin/fonts/icomoon/icomoon.css');?>">
       <link rel="stylesheet" type="text/css" href="<?= $this->baseUrl('/admin/fonts/animatedsvgicons/css/codropsicons.css');?>">
       <link rel="stylesheet" type="text/css" href="<?= $this->baseUrl('/admin/js/plugins/magnific/magnific-popup.css');?>">
-      <link rel="stylesheet" type="text/css" href="<?= $this->baseUrl('/admin/js/plugins/c3charts/c3.min.css');?>">
       <link rel="stylesheet" type="text/css" href="<?= $this->baseUrl('/admin/allcp/forms/css/forms.css');?>">
       <link rel="stylesheet" type="text/css" href="<?= $this->baseUrl('/admin/js/utility/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.min.css');?>">
       <link rel="stylesheet" type="text/css" href="<?= $this->baseUrl('/admin/skin/default_skin/less/theme.css');?>">
+      <link rel="stylesheet" type="text/css" href="<?= $this->baseUrl('/admin/js/plugins/summernote/summernote.css');?>">
+      <link rel="stylesheet" type="text/css" href="<?= $this->baseUrl('/admin/allcp/forms/css/forms.css');?>">
       <?php echo $this->headLink();?>
       <?php echo $this->headStyle();?>
       <link href="https://cdn.jsdelivr.net/entypo-fontello/0.1/entypo.woff" rel="stylesheet">
@@ -45,90 +46,8 @@
                      </button>
                   </div>
                </li>
-               <li class="dropdown dropdown-fuse">
-                  <div class="navbar-btn btn-group">
-                     <button class="dropdown-toggle btn btn-hover-effects" data-toggle="dropdown">
-                     <span class="fa fa-plus fs20 text-danger"></span>
-                     <span class="fs14 visible-xl">
-                     6
-                     </span>
-                     </button>
-                     <div class="navbar-activity dropdown-menu keep-dropdown w375" role="menu">
-                        <div class="panel mbn">
-                           <div class="panel-menu">
-                              <div class="btn-group btn-group-justified btn-group-nav" role="tablist">
-                                 <a href="#nav-tab1" data-toggle="tab" class="btn btn-sm active">Пријаве</a>
-                              </div>
-                           </div>
-                           <div class="panel-body pn">
-                              <div class="tab-content br-n pn">
-                                 <div id="nav-tab1" class="tab-pane active" role="tabpanel">
-                                    <ul class="media-list" role="menu">
-                                       <li class="media">
-                                          <a class="media-left" href="#">
-                                          <img src="<?= $this->baseUrl('/admin/img/avatars/1.png');?>" class="br3" alt="avatar">
-                                          </a>
-                                          <div class="media-body">
-                                             <h5 class="media-heading">New post
-                                                <span class="text-muted">- 09/01/16</span>
-                                             </h5>
-                                             Last Updated 5 days ago by
-                                             <a class="" href="#"> Anna Smith </a>
-                                          </div>
-                                       </li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="panel-footer text-center">
-                              <a href="#" class="btn btn-warning"> Погледај све </a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </li>
-               <li class="dropdown dropdown-fuse">
-                  <div class="navbar-btn btn-group">
-                     <button class="dropdown-toggle btn btn-hover-effects" data-toggle="dropdown">
-                     <span class="fa fa-envelope fs20 text-info-darker"></span>
-                     <span class="fs14 visible-xl">
-                     8
-                     </span>
-                     </button>
-                     <div class="navbar-activity dropdown-menu keep-dropdown w375" role="menu">
-                        <div class="panel mbn">
-                           <div class="panel-menu">
-                              <div class="btn-group btn-group-nav" role="tablist">
-                                 <a href="#nav-tab4" data-toggle="tab" class="btn btn-primary btn-sm active">Поруке</a>
-                              </div>
-                              <button class="btn btn-xs" type="button"><i class="fa fa-refresh"></i>
-                              </button>
-                           </div>
-                           <div class="panel-body pn">
-                              <div class="tab-content br-n pn">
-                                 <div id="nav-tab4" class="tab-pane active" role="tabpanel">
-                                    <ol class="timeline-list">
-                                       <li class="timeline-item">
-                                          <div class="timeline-icon light">
-                                             <span class="fa fa-envelope"></span>
-                                          </div>
-                                          <div class="timeline-desc">
-                                             <b>John Doe <span>-</span> <span class="timeline-date">3:16 am</span></b>
-                                             Sent you a message.
-                                             <a href="#">View now</a>
-                                          </div>
-                                       </li>
-                                    </ol>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="panel-footer text-center">
-                              <a href="#" class="btn btn-warning btn-sm"> Погледај све </a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </li>
+               <?= $this->notyRegistered();?>
+               <?= $this->notyMail();?>
                <li class="dropdown dropdown-fuse navbar-user">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img class="btn-hover-effects" src="<?= $this->baseUrl('/admin/img/avatars/profile_avatar.jpg');?>" alt="avatar">
@@ -297,12 +216,12 @@
                      </a>
                      <ul class="nav sub-nav">
                         <li>
-                           <a href="index2.html">
+                           <a href="<?= $this->url(array('controller' => 'admin_mail', 'action' => 'index'),'default',true);?>">
                            Листа порука
                            </a>
                         </li>
                         <li>
-                           <a href="sales-stats-products.html">
+                           <a href="<?= $this->url(array('controller' => 'admin_mail', 'action' => 'index'),'default',true);?>">
                            Нова порука
                            </a>
                         </li>
@@ -316,12 +235,12 @@
                      </a>
                      <ul class="nav sub-nav">
                         <li>
-                           <a href="index2.html">
+                           <a href="<?= $this->url(array('controller' => 'admin_registered', 'action' => 'index'),'default',true);?>">
                            Листа пријављених
                            </a>
                         </li>
                         <li>
-                           <a href="sales-stats-products.html">
+                           <a href="<?= $this->url(array('controller' => 'admin_registered', 'action' => 'index'),'default',true);?>">
                            Нова пријава
                            </a>
                         </li>
@@ -335,17 +254,20 @@
       </div>
       <script src="<?= $this->baseUrl('/admin/js/jquery/jquery-1.12.3.min.js');?>"></script>
       <script src="<?= $this->baseUrl('/admin/js/jquery/jquery_ui/jquery-ui.min.js');?>"></script>
-        <script src="<?= $this->baseUrl('/admin/fonts/animatedsvgicons/js/snap.svg-min.js');?>"></script>
+      <script src="<?= $this->baseUrl('/admin/fonts/animatedsvgicons/js/snap.svg-min.js');?>"></script>
       <script src="<?= $this->baseUrl('/admin/fonts/animatedsvgicons/js/svgicons-config.js');?>"></script>
       <script src="<?= $this->baseUrl('/admin/fonts/animatedsvgicons/js/svgicons.js');?>"></script>
       <script src="<?= $this->baseUrl('/admin/fonts/animatedsvgicons/js/svgicons-init.js');?>"></script>
       <script src="<?= $this->baseUrl('/admin/js/utility/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.concat.min.js');?>"></script>
+      <script src="<?= $this->baseUrl('/admin/js/plugins/summernote/summernote.min.js');?>"></script>
       <script src="<?= $this->baseUrl('/admin/js/utility/utility.js');?>"></script>
       <script src="<?= $this->baseUrl('/admin/js/demo/demo.js');?>"></script>
       <script src="<?= $this->baseUrl('/admin/js/main.js');?>"></script>
       <script src="<?= $this->baseUrl('/admin/js/demo/widgets_sidebar.js');?>"></script>
       <script src="<?= $this->baseUrl('/admin/js/pages/dashboard1.js');?>"></script>
       <script src="<?= $this->baseUrl('/admin/js/demo/widgets.js');?>"></script>
+      <script src="<?= $this->baseUrl('/admin/js/pages/basic-messages.js');?>"></script>
+      
       <!--Scripts -->
       <?= $this->inlineScript();?>
    </body>

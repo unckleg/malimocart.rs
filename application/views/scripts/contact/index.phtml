@@ -1,3 +1,8 @@
+<?php
+$this->headTitle('Контакт');
+$form = $this->form;
+$form->setElementDecorators(array('ViewHelper'));
+?>
 <!--start section-->
 <section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img5">
 
@@ -81,26 +86,56 @@
         
         </div>
 
-
-		<div class="grid grid_8">
-            
-           <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">
-                <div class="nicdark_textevidence nicdark_bg_orange nicdark_radius_top">
-                    <h4 class="white nicdark_margin20">КОНТАКТ ФОРМА</h4>
-                    <i class="icon-mail nicdark_iconbg right medium orange"></i>
-                </div>
-                <div class="nicdark_margin20">
-                    <input class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle" type="text" value="" placeholder="ИМЕ">
-                    <div class="nicdark_space20"></div>
-                    <input class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle" type="text" value="" placeholder="И-МЕЈЛ">
-                    <div class="nicdark_space20"></div>
-                    <textarea class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle" placeholder="ПОРУКА" rows="7"></textarea>
-                    <div class="nicdark_space20"></div>
-                    <!--<input class="nicdark_btn nicdark_bg_orange medium nicdark_shadow nicdark_radius white" type="submit" value="SEND">-->
-                    <a href="" class="nicdark_mpopup_ajax nicdark_btn nicdark_bg_orange medium nicdark_shadow nicdark_radius white nicdark_press">ПОШАЉИ</a>
+        <?php
+        $userIp = Zend_Controller_Front::getInstance()->getRequest()->getServer('REMOTE_ADDR');
+        $userAgent = new Zend_Http_UserAgent();
+        $userBrowser    = $userAgent->getUserAgent();
+        ;?>
+        <form method="POST" action="">
+        <input type="hidden" name="task" value="contact">
+        <input type="hidden" name="ip" value="<?= $userIp;?>">
+        <input type="hidden" name="useragent" value="<?= $userBrowser;?>">
+        <input type="hidden" name="date_sended" value="not-empty">
+            <div class="grid grid_8">
+               <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">
+                    <div class="nicdark_textevidence nicdark_bg_orange nicdark_radius_top">
+                        <h4 class="white nicdark_margin20">КОНТАКТ ФОРМА</h4>
+                        <i class="icon-mail nicdark_iconbg right medium orange"></i>
+                    </div>
+                    <div class="nicdark_margin20">
+                        <?= 
+                        $form->getElement('from_name')->setAttribs(array(
+                        'class' => 'nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle',
+                        'placeholder' => 'ВАШЕ ИМЕ',
+                        'id' => 'usr',
+                        'required' => 'required'
+                        ));
+                        ?>
+                        <div class="nicdark_space20"></div>
+                        <?= 
+                        $form->getElement('from_email')->setAttribs(array(
+                        'class' => 'nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle',
+                        'placeholder' => 'И-МЕЈЛ',
+                        'id' => 'usr',
+                        'required' => 'required'
+                        ));
+                        ?>
+                        <div class="nicdark_space20"></div>
+                        <?= 
+                        $form->getElement('message_text')->setAttribs(array(
+                        'class' => 'nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle',
+                        'placeholder' => 'ВАША ПОРУКА',
+                        'id' => 'usr',
+                        'required' => 'required',
+                        'rows' => 7
+                        ));
+                        ?>
+                        <div class="nicdark_space20"></div>
+                        <button type="submit" class="nicdark_btn nicdark_bg_orange medium nicdark_shadow nicdark_radius white nicdark_press">ПОШАЉИ</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
         <div class="nicdark_space50"></div>
     </div>
     <!--end nicdark_container-->

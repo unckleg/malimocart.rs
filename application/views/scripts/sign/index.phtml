@@ -1,3 +1,8 @@
+<?php
+$this->headTitle('Пријава');
+$form = $this->form;
+$form->setElementDecorators(array('ViewHelper'));
+?>
 <!--start section-->
 <section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img5">
 
@@ -49,29 +54,48 @@
                     <h4 class="white nicdark_margin20">ВАШЕ ИНФОРМАЦИЈЕ</h4>
                     <i class="icon-globe-1 nicdark_iconbg right medium yellow"></i>
                 </div>
+                <form method="POST" name="">
+                <input type="hidden" name="task" value="register">
+                <input type="hidden" name="date_registered" value="not-empty">
                 <div class="nicdark_margin20">
                     <p>ИМЕ РОДИТЕЉА:</p>
                     <div class="nicdark_space5"></div>
-                    <input class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle" type="text" value="" size="200">
+                    <?= $form->getElement('parent_name')->setAttribs(array(
+                        'class' => 'nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle',
+                        'size' => 200,
+                    ));?>
                     <div class="nicdark_space20"></div>
                     <p>ПРЕЗИМЕ РОДИТЕЉА:</p>
                     <div class="nicdark_space5"></div>
-                    <input class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle" type="text" value="" size="200">
+                    <?= $form->getElement('parent_surname')->setAttribs(array(
+                        'class' => 'nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle',
+                        'size' => 200,
+                    ));?>
                     <div class="nicdark_space20"></div>
                     <p>ИМЕ И ПРЕЗИМЕ ДЕТЕТА:</p>
                     <div class="nicdark_space5"></div>
-                    <input class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle" type="text" value="" size="200">
+                    <?= $form->getElement('first_last_child')->setAttribs(array(
+                        'class' => 'nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle',
+                        'size' => 200,
+                    ));?>
                     <div class="nicdark_space20"></div>
                     <p>И-МЕЈЛ:</p>
                     <div class="nicdark_space5"></div>
-                    <input class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle" type="text" value="" size="200">
+                    <?= $form->getElement('email')->setAttribs(array(
+                        'class' => 'nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle',
+                        'size' => 200,
+                    ));?>
                     <div class="nicdark_space20"></div>
                     <p>ТЕЛЕФОН:</p>
                     <div class="nicdark_space5"></div>
-                    <input class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle" type="text" value="" size="200">
+                    <?= $form->getElement('phone')->setAttribs(array(
+                        'class' => 'nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle',
+                        'size' => 200,
+                    ));?>
                     <div class="nicdark_space20"></div>
                     <input class="nicdark_btn nicdark_bg_yellow medium nicdark_shadow nicdark_radius white nicdark_press" type="submit" value="ПОТВРДИ">
                 </div>
+                </form>
             </div>
 
         </div>

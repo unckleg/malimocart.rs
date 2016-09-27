@@ -1,0 +1,57 @@
+<section id="content_wrapper">
+<header id="topbar" class="alt">
+       <div class="topbar-left">
+          <ol class="breadcrumb">
+             <li class="breadcrumb-link">
+                <a href="<?= $this->url(array('controller' => 'admin_dashboard', 'action' => 'index'), 'default', true);?>">CMS Почетна</a>
+             </li>
+             <li class="breadcrumb-link">
+                <a>Пријављени</a>
+             </li>
+             <li class="breadcrumb-current-item">Листа пријављених</li>
+          </ol>
+       </div>
+    </header>
+<?= $this->iconNavigation();?>
+<?= $this->systemMessagesHtml($this->systemMessages);?>
+<section id="content" class="table-layout animated fadeIn">
+   <div class="chute chute-center">
+      <div class="panel" id="spy4">
+         <div class="panel-heading">
+            <span class="panel-title pn">Листа и информације свих пријављених</span>
+            <div class="pull-right hidden-xs">
+            </div>
+         </div>
+         <div class="panel-body pn">
+            <div class="table-responsive">
+               <div class="bs-component">
+                  <table class="table table-hover btn-gradient-grey">
+                     <thead>
+                        <tr>
+                           <th>Име</th>
+                           <th>Презиме</th>
+                           <th>Име детета</th>
+                           <th>Телефон</th>
+                           <th>Мејл</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <?php foreach ($this->parents as $parent):?>
+                            <tr>
+                               <td><?= $this->escape($parent['parent_name']);?></td>
+                               <td><?= $this->escape($parent['parent_surname']);?></td>
+                               <td><?= $this->escape($parent['first_last_child']);?></td>
+                               <td><?= $this->escape($parent['phone']);?></td>
+                               <td><?= $this->escape($parent['email']);?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+</section>
+<style>#content .panel {padding: 28px 32px !important;} #source-button {display:none !important}</style>

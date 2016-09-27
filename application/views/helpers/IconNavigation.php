@@ -24,13 +24,13 @@ class Zend_View_Helper_IconNavigation extends Zend_View_Helper_Abstract
                </a>
             </div>
             <div class="col-xs-4 col-sm-2">
-               <a href="#" class="service-box bg-alert">
+               <a href="<?= $this->view->url(array('controller' => 'admin_mail', 'action' => 'index'),'default',true);?>" class="service-box bg-alert">
                <span class="fa fa-envelope"></span>
                <span class="service-title">Поруке</span>
                </a>
             </div>
             <div class="col-xs-4 col-sm-2">
-               <a href="#" class="service-box bg-system">
+               <a href="<?= $this->view->url(array('controller' => 'admin_registered', 'action' => 'index'), 'default', true);?>" class="service-box bg-system">
                <span class="fa fa-users"></span>
                <span class="service-title">Пријаве</span>
                </a>
