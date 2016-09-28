@@ -1,0 +1,219 @@
+<?php
+$this->headTitle('Нова објава');
+$form = $this->form;
+$form->setElementDecorators(array('ViewHelper'));
+?>
+<section id="content_wrapper">
+<header id="topbar" class="alt">
+       <div class="topbar-left">
+          <ol class="breadcrumb">
+             <li class="breadcrumb-link">
+                <a href="<?= $this->url(array('controller' => 'admin_dashboard', 'action' => 'index'), 'default', true);?>">CMS Почетна</a>
+             </li>
+             <li class="breadcrumb-link">
+                <a>CMS Блог</a>
+             </li>
+             <li class="breadcrumb-current-item">Нова објава</li>
+          </ol>
+       </div>
+    </header>
+<?= $this->iconNavigation();?>
+<div id="content" class="">
+<?php $user = Zend_Auth::getInstance()->getIdentity();?>
+<form class="form-horizontal" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="task" value="create">
+    <input type="hidden" name="author_id" value="<?= $user['first_name'];?>">
+   <div class="row">
+      <div class="col-md-9">
+         <div class="panel">
+            <div class="panel-heading">
+               <span class="panel-title">Додавање нове објаве</span>
+            </div>
+            <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                        <?= $form->getElement('title')->setAttribs(array(
+                            'class' => 'form-control input-lg',
+                            'placeholder' => 'Унеси наслов објаве...',
+                            'id' => 'inputStandard'
+                        ));?>
+                        </div>
+                        <?php if ($form->getElement('title')->hasErrors()) {?>
+                            <div class="has-error">
+                                <?php foreach ($form->getElement('title')->getMessages() as $message) {?>
+                                    <div class="alert"><?php echo $this->escape($message);?></div>
+                                <?php }?>
+                            </div>
+                        <?php }?>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <?= $form->getElement('text')->setAttribs(array(
+                                'class' => 'form-control',
+                                'placeholder' => 'Унеси наслов објаве...',
+                                'id' => 'text'
+                            ));?>
+                        </div>
+                        <?php if ($form->getElement('text')->hasErrors()) {?>
+                            <div class="has-error">
+                                <?php foreach ($form->getElement('text')->getMessages() as $message) {?>
+                                    <div class="alert"><?php echo $this->escape($message);?></div>
+                                <?php }?>
+                            </div>
+                        <?php }?>
+                    </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-3">
+         <div class="panel">
+            <div class="panel-heading">
+               <span class="panel-title">Информације</span>
+            </div>
+            <div class="panel-body">
+                   <div class="form-group mbn">
+                        <div class="col-lg-10">
+                        <label for="tagmanager" class=" control-label">Ознаке</label>
+                        <?= $form->getElement('tags')->setAttribs(array(
+                            'class' => 'form-control tm-input',
+                            'placeholder' => 'Ознака1, Ознака2, Ознака3',
+                            'id' => 'tagmanager'
+                        ));?>
+                           <?php if ($form->getElement('tags')->hasErrors()) {?>
+                            <div class="has-error">
+                                <?php foreach ($form->getElement('tags')->getMessages() as $message) {?>
+                                    <div class="alert"><?php echo $this->escape($message);?></div>
+                                <?php }?>
+                            </div>
+                        <?php }?>
+                        </div>
+                     </div>
+                
+                    <div class="form-group mbn">
+                        <div class="col-lg-10">
+                            <label for="checkboxExample14" class="control-label">Категорије</label><br>
+                            <div class="checkbox-custom fill checkbox-primary mb5">
+                                <input type="checkbox" name="category_general" id="checkboxExample14"
+                                       <?php if ($this->post['category_general'] == 1):?> checked <?php endif; ?>>
+                                    <label for="checkboxExample14">Опште</label>
+                            </div>
+                            <div class="checkbox-custom fill checkbox-primary mb5">
+                                <input type="checkbox" name="category_news" id="checkboxExample15"
+                                       <?php if ($this->post['category_news'] == 1):?> checked <?php endif; ?>>
+                                    <label for="checkboxExample15">Новости</label>
+                            </div>
+                            <div class="checkbox-custom fill checkbox-primary mb5">
+                                <input type="checkbox" name="category_announcements" id="checkboxExample16"
+                                       <?php if ($this->post['category_announcements'] == 1):?> checked <?php endif; ?>>
+                                    <label for="checkboxExample16">Радионице</label>
+                            </div>
+                        </div>
+                     </div>
+            </div>
+         </div>
+         <div class="panel">
+            <div class="panel-heading">
+               <span class="panel-title">Фотографија</span>
+            </div>
+            <div class="panel-body">
+                <div class="fileupload fileupload-new" data-provides="fileupload">
+                   <div class="fileupload-preview thumbnail mb20">
+                      <img src="/uploads/blog-photos/<?= $this->post['id'];?>.jpg" alt="holder">
+                   </div>
+                   <div class="row">
+                      <div class="col-xs-7">
+                         <span class="btn btn-primary btn-file btn-block">
+                         <span class="fileupload-new">Изабери</span>
+                         <span class="fileupload-exists">Промени</span>
+                         <input name="post_photo" type="file">
+                         </span>
+                      </div>
+                   </div>
+                </div>
+            </div>
+             <?php if ($form->getElement('post_photo')->hasErrors()) {?>
+                            <div class="has-error">
+                                <?php foreach ($form->getElement('post_photo')->getMessages() as $message) {?>
+                                    <div class="alert"><?php echo $this->escape($message);?></div>
+                                <?php }?>
+                            </div>
+                        <?php }?>
+         </div>
+      </div>
+   </div>
+    <button class="button btn-info show" type="submit" id="back-to-top" title="Објави">Објави</button>
+</form>
+</div>
+</section>
+
+<?php $this->headStyle()->captureStart();?>
+    #content .panel {
+        padding: 28px 32px !important;
+    }
+    .topbar-dropmenu-open {
+        display: none !important;
+    }
+    #content {    padding: 10px 2px 10px 10px; }
+    #back-to-top {
+    position: fixed;
+    bottom: 40px;
+    z-index: 9999;
+    width: 10%;
+    height: 7%;
+    text-align: center;
+    line-height: 30px;
+    background: #f5f5f5;
+    color: #444;
+    cursor: pointer;
+    border: 0;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+    }
+    #back-to-top:hover {
+        background: #e9ebec;
+    }
+    #back-to-top.show {
+        opacity: 1;
+    }
+    .btn-info {
+        color: #fff !important;
+        background-color: #47d1af !important;
+    }
+<?php $this->headStyle()->captureEnd();?>
+    
+<script>
+<?php $this->inlineScript()->captureStart();?>
+   CKEDITOR.replace( 'text', {
+        'contentsCss': [
+            '<?php echo $this->baseUrl('/css/nicdark_style.css');?>',
+            '<?php echo $this->baseUrl('/css/revslider/settings.css');?>',
+            'http://fonts.googleapis.com/css?family=Montserrat:400,700',
+            'http://fonts.googleapis.com/css?family=Raleway',
+            'http://fonts.googleapis.com/css?family=Montez'
+        ],
+        height: 494,
+        allowedContent: true,
+        filebrowserBrowseUrl: '<?php echo $this->url(array('controller' => 'admin_filemanager', 'action' => 'popup'), 'default', true) ;?>',
+        toolbar: [
+        { name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Source', '-', 'Preview', 'Print', '-',] },
+        { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo' ] },
+        { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', ] },
+        { name: 'links', items: [ 'Link', 'Unlink' ] },
+        { name: 'insert', items: [ 'Image', 'Table', 'HorizontalRule'] },
+        '/',
+        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', '-', 'RemoveFormat' ] },
+        { name: 'styles', items: [ 'Styles', 'Format' ] },
+        { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
+        { name: 'others', items: [ '-' ] },
+        { name: 'about', items: [ 'About' ] }
+    ]
+    });
+
+<?php $this->inlineScript()->captureEnd();?>
+</script>
+<?php $this->inlineScript()->appendFile($this->baseUrl('/admin/js/plugins/cktext/cktext.js'));?>
+<?php $this->inlineScript()->appendFile($this->baseUrl('/admin/js/pages/user-forms-image-tools.js'));?>
+<?php $this->inlineScript()->appendFile($this->baseUrl('/admin/js/plugins/holder/holder.min.js'));?>
+<?php $this->inlineScript()->appendFile($this->baseUrl('/admin/js/plugins/fileupload/fileupload.js'));?>

@@ -1,0 +1,53 @@
+<?php Zend_Layout::getMvcInstance()->disableLayout(); ?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Фајлменаџер </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2" />
+
+		<!-- jQuery and jQuery UI (REQUIRED) -->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+		<script src="<?php echo $this->baseUrl('/admin/js/jquery/jquery-1.12.3.min.js');?>"></script>
+		<script src="<?php echo $this->baseUrl('/admin/js/jquery/jquery_ui/jquery-ui.min.js'); ?>"></script>
+
+		<!-- elFinder CSS (REQUIRED) -->
+		<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl('/admin/js/plugins/elfinder/css/elfinder.min.css'); ?>">
+		<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl('/admin/js/plugins/elfinder/css/theme.css'); ?>">
+		<!-- elFinder JS (REQUIRED) -->
+		<script src="<?php echo $this->baseUrl('/admin/js/plugins/elfinder/js/elfinder.min.js'); ?>"></script>
+                
+		<!-- elFinder translation (OPTIONAL) -->
+		<!--<script src="js/i18n/elfinder.ru.js"></script>-->
+
+		<!-- elFinder initialization (REQUIRED) -->
+		<script type="text/javascript" charset="utf-8">
+                    
+                    function getUrlParam(paramName) {
+                        var reParam = new RegExp('(?:[\?&]|&amp;)' + paramName + '=([^&]+)', 'i') ;
+                        var match = window.location.search.match(reParam) ;
+
+                        return (match && match.length > 1) ? match[1] : '' ;
+                    }
+
+			$(document).ready(function() {
+                            var funcNum = getUrlParam('CKEditorFuncNum');
+
+                            var elf = $('#filemanager-container').elfinder({
+                                url : '<?php echo $this->url(array('controller' => 'admin_filemanager', 'action' => 'connector'), 'default', true) ;?>',
+                                getFileCallback : function(file) {
+                                    window.opener.CKEDITOR.tools.callFunction(funcNum, file.url);
+                                    elf.destroy();
+                                    window.close();
+                                },
+                                resizable: false
+                            }).elfinder('instance');
+			});
+		</script>
+	</head>
+	<body>
+		<!-- Element where elFinder will be created (REQUIRED) -->
+		<div id="filemanager-container"></div>
+
+	</body>
+</html>

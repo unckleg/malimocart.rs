@@ -2,7 +2,7 @@
 //disable layout
 Zend_Layout::getMvcInstance()->disableLayout();
 
-error_reporting(1); // Set E_ALL for debuging
+//error_reporting(1); // Set E_ALL for debuging
 
 // load composer autoload before load elFinder autoload If you need composer
 //require APPLICATION_PATH . '/../vendor/autoload.php';
@@ -36,8 +36,8 @@ $opts = array(
 	'roots' => array(
 		array(
 			'driver'        => 'LocalFileSystem',           // driver for accessing file system (REQUIRED)
-			'path'          => PUBLIC_PATH . '/uploads/filemanager', // path to files (REQUIRED)
-			'URL'           => $this->baseUrl('/uploads/filemanager'), // URL to files (REQUIRED)
+			'path'          => PUBLIC_PATH . '/uploads', // path to files (REQUIRED)
+			'URL'           => $this->baseUrl('/uploads'), // URL to files (REQUIRED)
 			'uploadDeny'    => array('all'),                // All Mimetypes not allowed to upload
 			'uploadAllow'   => array(
                             'image', 

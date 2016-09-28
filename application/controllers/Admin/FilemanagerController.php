@@ -10,4 +10,8 @@ class Admin_FilemanagerController extends Zend_Controller_Action
     {
         
     }
+    public function popupAction()
+    {
+        
+    }
 }

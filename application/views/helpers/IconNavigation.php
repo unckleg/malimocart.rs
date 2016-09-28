@@ -18,7 +18,7 @@ class Zend_View_Helper_IconNavigation extends Zend_View_Helper_Abstract
                </a>
             </div>
             <div class="col-xs-4 col-sm-2">
-               <a href="#" class="service-box bg-primary">
+               <a href="<?= $this->view->url(array('controller' => 'admin_blog', 'action' => 'index'),'default',true);?>" class="service-box bg-primary">
                <span class="fa fa-pencil-square-o"></span>
                <span class="service-title">Блог</span>
                </a>

@@ -1,0 +1,53 @@
+<section id="content_wrapper">
+<header id="topbar" class="alt">
+       <div class="topbar-left">
+          <ol class="breadcrumb">
+             <li class="breadcrumb-link">
+                <a href="<?= $this->url(array('controller' => 'admin_dashboard', 'action' => 'index'), 'default', true);?>">CMS Почетна</a>
+             </li>
+             <li class="breadcrumb-link">
+                <a>Објаве</a>
+             </li>
+             <li class="breadcrumb-current-item">Листа објава</li>
+          </ol>
+       </div>
+    </header>
+<?= $this->iconNavigation();?>
+<?= $this->systemMessagesHtml($this->systemMessages);?>
+<section id="content" class="table-layout animated fadeIn">
+   <div class="chute chute-center">
+      <div class="panel" id="spy4">
+         <div class="panel-heading">
+            <span class="panel-title pn">Листа-измене свих објава</span>
+            <div class="pull-right hidden-xs">
+            </div>
+         </div>
+         <div class="panel-body pn">
+            <div class="table-responsive">
+               <div class="bs-component">
+                  <table class="table table-hover btn-gradient-grey">
+                     <thead>
+                        <tr>
+                           <th>Наслов</th>
+                           <th>Аутор</th>
+                           <th>Објављено</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <?php foreach ($this->posts as $post):?>
+                            <tr>
+                               <td onclick="window.location='<?= $this->url(array('controller' => 'admin_blog', 'action' => 'edit', 'id' => $post['id']),'default',true);?>'"><?= $this->escape($post['title']);?></td>
+                               <td><?= $this->escape($post['author_id']);?></td>
+                               <td><?= $this->escape(date('d-M-y', strtotime($post['date_published'])));?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+</section>
+<style>#content .panel {padding: 28px 32px !important;} #source-button {display:none !important}</style>

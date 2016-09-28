@@ -50,7 +50,7 @@
                <?= $this->notyMail();?>
                <li class="dropdown dropdown-fuse navbar-user">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img class="btn-hover-effects" src="<?= $this->baseUrl('/admin/img/avatars/profile_avatar.jpg');?>" alt="avatar">
+                  <img class="btn-hover-effects" src="http://2017.ecoop.org/getDefaultImage/small-avatar?1403689208000" alt="avatar">
                   <span class="hidden-xs">
                   <?php $user = Zend_Auth::getInstance()->getIdentity() ;?>
                   <span class="name"><?= $this->escape($user['first_name']);?></span>
@@ -117,18 +117,18 @@
                      </a>
                      <ul class="nav sub-nav">
                         <li>
-                           <a href="index2.html">
+                           <a href="<?= $this->url(array('controller' => 'admin_blog', 'action' => 'index'),'default',true);?>">
                            Листа објава
                            </a>
                         </li>
                         <li>
-                           <a href="sales-stats-products.html">
+                           <a href="<?= $this->url(array('controller' => 'admin_blog', 'action' => 'create'),'default',true);?>">
                            Нова објава
                            </a>
                         </li>
                      </ul>
                   </li>
-                  <li>
+<!--                  <li>
                      <a class="accordion-toggle" href="#">
                      <span class="caret"></span>
                      <span class="sidebar-title">Категорије</span>
@@ -165,7 +165,7 @@
                            </a>
                         </li>
                      </ul>
-                  </li>
+                  </li>-->
                   
                   <li class="sidebar-label pt25">МЕНАЏМЕНТ</li>
                   <li>
@@ -197,12 +197,12 @@
                      </a>
                      <ul class="nav sub-nav">
                         <li>
-                           <a href="index2.html">
+                           <a href="">
                            Листа галерија
                            </a>
                         </li>
                         <li>
-                           <a href="sales-stats-products.html">
+                           <a href="">
                            Нова галерија
                            </a>
                         </li>
@@ -267,6 +267,7 @@
       <script src="<?= $this->baseUrl('/admin/js/pages/dashboard1.js');?>"></script>
       <script src="<?= $this->baseUrl('/admin/js/demo/widgets.js');?>"></script>
       <script src="<?= $this->baseUrl('/admin/js/pages/basic-messages.js');?>"></script>
+      <script src="<?= $this->baseUrl('/admin/js/plugins/ckeditor/ckeditor.js');?>"></script>
       
       <!--Scripts -->
       <?= $this->inlineScript();?>
