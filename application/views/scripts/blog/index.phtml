@@ -42,10 +42,13 @@
                 <a data-filter="*" class="nicdark_bg_grey2_hover nicdark_transition nicdark_btn nicdark_bg_grey small nicdark_shadow nicdark_radius grey">СВЕ</a>
             </div>
             <div class="nicdark_margin10">
-                <a data-filter=".educational" class="nicdark_bg_grey2_hover nicdark_transition nicdark_btn nicdark_bg_grey small nicdark_shadow nicdark_radius grey">КАТЕГОРИЈА 1</a>
+                <a data-filter=".category_general" class="nicdark_bg_grey2_hover nicdark_transition nicdark_btn nicdark_bg_grey small nicdark_shadow nicdark_radius grey">ОПШТЕ</a>
             </div>
             <div class="nicdark_margin10">
-                <a data-filter=".excursions" class="nicdark_bg_grey2_hover nicdark_transition nicdark_btn nicdark_bg_grey small nicdark_shadow nicdark_radius grey">КАТЕГОРИЈА 2</a>
+                <a data-filter=".category_news" class="nicdark_bg_grey2_hover nicdark_transition nicdark_btn nicdark_bg_grey small nicdark_shadow nicdark_radius grey">НАЈАВЕ</a>
+            </div>
+            <div class="nicdark_margin10">
+                <a data-filter=".category_announcements" class="nicdark_bg_grey2_hover nicdark_transition nicdark_btn nicdark_bg_grey small nicdark_shadow nicdark_radius grey">НОВОСТИ</a>
             </div>
             <div class="nicdark_space10"></div>
         </div>
@@ -54,194 +57,27 @@
         <!--start nicdark_masonry_container-->
         <div class="nicdark_masonry_container">
 
+            <?php foreach ($this->posts as $post):?>
+                <div class="grid grid_4 nicdark_masonry_item <?= $post['category_general'];?>">
+                    <div class="nicdark_archive1 nicdark_bg_blue nicdark_radius nicdark_shadow">
+                        
+                        <img alt=""  src="/uploads/blog-photos/<?= $post['id'];?>.jpg">
+                        <div class="nicdark_margin20">
+                            <h4 class="white"><?= $post['title'];?></h4>
+                            <div class="nicdark_space20"></div>
+                            <div class="nicdark_space20"></div>
+                            <p class="white" style="color: #fff !important;">
+                                <?php echo (mb_strlen(strip_tags($post['text'])) > 160 ? mb_substr(strip_tags($post['text']), 0, 160) . "..." : strip_tags($post['text'])); ?>
+                            </p>
+                            <div class="nicdark_space20"></div>
+                            <a href="<?= $this->url(array('controller' => 'blog', 'action' => 'details', 'id' => $post['id']),'default',true);?>" class="white nicdark_btn"><i class="icon-doc-text-1 "></i> Детаљније</a>                        
+                        </div>
 
-            <div class="grid grid_4 nicdark_masonry_item educational">
-                <div class="nicdark_archive1 nicdark_bg_blue nicdark_radius nicdark_shadow">
-                    
-                    <a href="single-post-right-sidebar.html" class="nicdark_zoom nicdark_btn_icon nicdark_bg_blue nicdark_border_bluedark white medium nicdark_radius_circle nicdark_absolute_left"><i class="icon-link-outline"></i></a>
+                        <i class="icon-doc-text-1 nicdark_iconbg right medium blue"></i>
 
-                    <img alt=""  src="<?= $this->baseUrl('/img/blog/img1.jpg');?>">
-                    
-                    <div class="nicdark_margin20">
-                        <h4 class="white">Наслов 1</h4>
-                        <div class="nicdark_space20"></div>
-                        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
-                        <div class="nicdark_space20"></div>
-                        <p class="white">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet.</p>
-                        <div class="nicdark_space20"></div>
-                        <a href="single-post-right-sidebar.html" class="white nicdark_btn"><i class="icon-doc-text-1 "></i> Детаљније</a>                        
                     </div>
-
-                    <i class="icon-camera-outline nicdark_iconbg right medium blue"></i>
-
                 </div>
-            </div>
-            <div class="grid grid_4 nicdark_masonry_item excursions">
-                <div class="nicdark_archive1 nicdark_bg_green nicdark_radius nicdark_shadow">
-                    
-                    <div class="nicdark_margin20">
-                        <h4 class="white">Наслов 2</h4>                        
-                        <div class="nicdark_space20"></div>
-                        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
-                        <div class="nicdark_space20"></div>
-                        <p class="white">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet.</p>
-                        <div class="nicdark_space20"></div>
-                        <a href="single-post-right-sidebar.html" class="white nicdark_btn"><i class="icon-doc-text-1 "></i> Детаљније</a>
-                    </div>
-
-                    <i class="icon-pencil-1 nicdark_iconbg right medium green"></i>
-
-                </div>
-            </div>
-            <div class="grid grid_4 nicdark_masonry_item educational">
-                <div class="nicdark_archive1 nicdark_bg_violet nicdark_radius nicdark_shadow">
-                    
-                    <a href="single-post-right-sidebar.html" class="nicdark_zoom nicdark_btn_icon nicdark_bg_violet nicdark_border_violetdark white medium nicdark_radius_circle nicdark_absolute_left"><i class="icon-link-outline"></i></a>
-
-                    <img alt=""  src="<?= $this->baseUrl('/img/blog/img2.jpg');?>">
-                    
-                    <div class="nicdark_margin20">
-                        <h4 class="white">Наслов 3</h4>                        
-                    </div>
-
-                    <i class="icon-picture-outline nicdark_iconbg right medium violet"></i>
-
-                </div>
-            </div>
-            <div class="grid grid_4 nicdark_masonry_item excursions">
-                <div class="nicdark_archive1 nicdark_bg_orange nicdark_radius nicdark_shadow">
-                    
-                    <a href="single-post-right-sidebar.html" class="nicdark_zoom nicdark_btn_icon nicdark_bg_orange nicdark_border_orangedark white medium nicdark_radius_circle nicdark_absolute_left"><i class="icon-link-outline"></i></a>
-
-                    <img alt=""  src="<?= $this->baseUrl('/img/blog/img4.jpg');?>">
-                    
-                    <div class="nicdark_margin20">
-                        <h4 class="white">Наслов 3</h4>                        
-                    </div>
-
-                    <i class="icon-camera-outline nicdark_iconbg right medium orange"></i>
-
-                </div>
-            </div>
-            <div class="grid grid_4 nicdark_masonry_item excursions">
-                <div class="nicdark_archive1 nicdark_bg_red nicdark_radius nicdark_shadow">
-                    
-                    <a href="single-post-right-sidebar.html" class="nicdark_zoom nicdark_btn_icon nicdark_bg_red nicdark_border_reddark white medium nicdark_radius_circle nicdark_absolute_left"><i class="icon-link-outline"></i></a>
-
-                    <img alt=""  src="<?= $this->baseUrl('/img/blog/img3.jpg');?>">
-                    
-                    <div class="nicdark_margin20">
-                        <h4 class="white">Наслов 4</h4>
-                        <div class="nicdark_space20"></div>
-                        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
-                        <div class="nicdark_space20"></div>
-                        <p class="white">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet.</p>
-                        <div class="nicdark_space20"></div>
-                        <a href="single-post-right-sidebar.html" class="white nicdark_btn"><i class="icon-doc-text-1 "></i> Детаљније</a>                        
-                    </div>
-
-                    <i class="icon-pencil-1 nicdark_iconbg right medium red"></i>
-
-                </div>
-            </div>
-            <div class="grid grid_4 nicdark_masonry_item excursions">
-                <div class="nicdark_archive1 nicdark_bg_green nicdark_radius nicdark_shadow">
-                    
-                    <a href="single-post-right-sidebar.html" class="nicdark_zoom nicdark_btn_icon nicdark_bg_green nicdark_border_greendark white medium nicdark_radius_circle nicdark_absolute_left"><i class="icon-link-outline"></i></a>
-
-                    <img alt=""  src="<?= $this->baseUrl('/img/blog/img5.jpg');?>">
-                    
-                    <div class="nicdark_margin20">
-                        <h4 class="white">Наслов 5</h4>
-                        <div class="nicdark_space20"></div>
-                        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
-                        <div class="nicdark_space20"></div>
-                        <p class="white">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet.</p>
-                        <div class="nicdark_space20"></div>
-                        <a href="single-post-right-sidebar.html" class="white nicdark_btn"><i class="icon-doc-text-1 "></i> Детаљније</a>                        
-                    </div>
-
-                    <i class="icon-picture-outline nicdark_iconbg right medium green"></i>
-
-                </div>
-            </div>
-            <div class="grid grid_4 nicdark_masonry_item educational">
-                <div class="nicdark_archive1 nicdark_bg_yellow nicdark_radius nicdark_shadow">
-                    
-                    <a href="single-post-right-sidebar.html" class="nicdark_zoom nicdark_btn_icon nicdark_bg_yellow nicdark_border_yellowdark white medium nicdark_radius_circle nicdark_absolute_left"><i class="icon-link-outline"></i></a>
-
-                    <img alt=""  src="<?= $this->baseUrl('/img/blog/img7.jpg');?>">
-                    
-                    <div class="nicdark_margin20">
-                        <h4 class="white">Наслов 6</h4>
-                        <div class="nicdark_space20"></div>
-                        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
-                        <div class="nicdark_space20"></div>
-                        <p class="white">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet.</p>
-                        <div class="nicdark_space20"></div>
-                        <a href="single-post-right-sidebar.html" class="white nicdark_btn"><i class="icon-doc-text-1 "></i> Детаљније</a>                        
-                    </div>
-
-                    <i class="icon-picture-outline nicdark_iconbg right medium yellow"></i>
-
-                </div>
-            </div>
-            <div class="grid grid_4 nicdark_masonry_item excursions">
-                <div class="nicdark_archive1 nicdark_bg_blue nicdark_radius nicdark_shadow">
-                    
-                    <a href="single-post-right-sidebar.html" class="nicdark_zoom nicdark_btn_icon nicdark_bg_blue nicdark_border_bluedark white medium nicdark_radius_circle nicdark_absolute_left"><i class="icon-link-outline"></i></a>
-
-                    <img alt=""  src="<?= $this->baseUrl('/img/blog/img8.jpg');?>">
-                    
-                    <div class="nicdark_margin20">
-                        <h4 class="white">Наслов 7</h4>
-                        <div class="nicdark_space20"></div>
-                        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
-                        <div class="nicdark_space20"></div>
-                        <p class="white">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet.</p>
-                        <div class="nicdark_space20"></div>
-                        <a href="single-post-right-sidebar.html" class="white nicdark_btn"><i class="icon-doc-text-1 "></i> Детаљније</a>                        
-                    </div>
-
-                    <i class="icon-camera-outline nicdark_iconbg right medium blue"></i>
-
-                </div>
-            </div>
-
-            <div class="grid grid_4 nicdark_masonry_item excursions">
-                <div class="nicdark_archive1 nicdark_bg_orange nicdark_radius nicdark_shadow">
-                    
-                    <a href="single-post-right-sidebar.html" class="nicdark_zoom nicdark_btn_icon nicdark_bg_orange nicdark_border_orangedark white medium nicdark_radius_circle nicdark_absolute_left"><i class="icon-link-outline"></i></a>
-
-                    <img alt=""  src="<?= $this->baseUrl('/img/blog/img6.jpg');?>">
-                    
-                    <div class="nicdark_margin20">
-                        <h4 class="white">Наслов 8</h4>
-                    </div>
-
-                    <i class="icon-picture-outline nicdark_iconbg right medium orange"></i>
-
-                </div>
-            </div>
-
-            <div class="grid grid_4 nicdark_masonry_item excursions">
-                <div class="nicdark_archive1 nicdark_bg_red nicdark_radius nicdark_shadow">
-                    
-                    <div class="nicdark_margin20">
-                        <h4 class="white">Наслов 9</h4>                        
-                        <div class="nicdark_space20"></div>
-                        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
-                        <div class="nicdark_space20"></div>
-                        <p class="white">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet.</p>
-                        <div class="nicdark_space20"></div>
-                        <a href="single-post-right-sidebar.html" class="white nicdark_btn"><i class="icon-doc-text-1 "></i> Детаљније</a>
-                    </div>
-
-                    <i class="icon-pencil-1 nicdark_iconbg right medium red"></i>
-
-                </div>
-            </div>
-
+            <?php endforeach; ?>
         </div>
         <!--end nicdark_masonry_container-->
 

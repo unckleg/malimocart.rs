@@ -21,154 +21,40 @@
     </div>
 </section>
 <!-- MODAL BOXES -->
-    <div id="klavir" style="display:none;">
-      <p style="color: #fff; font-size: 17px;text-align: center;">Индивидуални часови са наставником клавира.
-          <br>Програми за све узрасте, од припремног до академског, по методама и плану и програму музичких школа.</p>
-    </div>
-    <div id="solfedjo" style="display:none;">
-      <p style="color: #fff; font-size: 17px;text-align: center;">Mоже бити „баук“ многима то обично и јесте, због неразумевања и страха у почетку учења. 
-          <br>Обично се учи на групној настави, па је самим тим теже да се професор посвети...</p>
-    </div>
-    <div id="solopevanje" style="display:none;">
-      <p style="color: #fff; font-size: 17px;text-align: center;">Учимо технике дисања и основе соло-певачке, вокалне, технике. 
-          <br>Научите најлепше песме старих мајстора и домаћих аутора. Држимо и припремну наставу за упис у нижу...</p>
-    </div>
-    <div id="popularnamuzika" style="display:none;">
-      <p style="color: #fff; font-size: 17px;text-align: center;">Волите да певате, али бисте волели да своје певање мало „уобличите“ и научите неке од цака којима се служе популарне звезде данашњице? Да проширите распон гласа и...
-      </p>
-    </div>
-    <div id="komponovanje" style="display:none;">
-      <p style="color: #fff; font-size: 17px;text-align: center;">Jе програм за ученике за које се подразумева да познају основе теорије музике и солфеђа. 
-          <br>Hаучите да уобличите и запишете своје идеје и створите чаробне мелодије!</p>
-    </div>
-    <div id="osnovemuzike" style="display:none;">
-      <p style="color: #fff; font-size: 17px;text-align: center;">Теорија музике је наука која се бави тумачењем музичких елемената, правила и закона по којима се они примењују приликом стварања и извођења музичких дела...</p>
-    </div>
+    <?php foreach ($this->workshopindividual as $workshop):?>
+        <div id="<?= $workshop['id'];?>" style="display:none;">
+          <p style="color: #fff; font-size: 17px;text-align: center;"><?= $workshop['title'];?>
+              <br><?= $workshop['description'];?></p>
+        </div>
+    <?php endforeach; ?>
 
 <!-- END MODAL BOXES -->
 <section class="nicdark_section">
     <!--start nicdark_container-->
     <div class="nicdark_container nicdark_clearfix">
         <div class="nicdark_space50"></div>
-        <div class="grid grid_4">
-            <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow center"> 
-                <div style="background:url(<?= $this->baseUrl('/img/courses/img3.jpg');?>); background-size:cover;" class="nicdark_archive1 nicdark_radius">
-                    <div class="nicdark_filter orange nicdark_radius_top">
-                        <div class="nicdark_space60"></div>
-                        <div class="nicdark_space60"></div>
+        <?php $colorArray = array('blue', 'orange', 'green','yellow','red',);?>
+        <?php foreach ($this->workshopindividual as $workshop):?>
+                <div class="grid grid_4">
+                    <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow center"> 
+                        <div style="background:url(<?= $this->workshopImgUrl($workshop);?>); background-size:cover;" class="nicdark_archive1 nicdark_radius">
+                            <div class="nicdark_filter  <?= $colorArray[array_rand($colorArray)]; ?> nicdark_radius_top">
+                                <div class="nicdark_space60"></div>
+                                <div class="nicdark_space60"></div>
+                            </div>
+                        </div>
+                        <div class="nicdark_textevidence nicdark_bg_greydark">
+                            <h4 class="white nicdark_margin20"><?= strtoupper($workshop['title']);?></h4>
+                        </div>
+                        <div class="nicdark_margin20">
+                            <p><?= $workshop['short_description'];?></p>
+                            <div class="nicdark_space20"></div>
+                            <a href="#<?= $workshop['id'];?>" rel="modal:open" class="white nicdark_btn nicdark_bg_orange medium nicdark_radius nicdark_shadow nicdark_press">ДЕТАЉНИЈЕ</a>
+                        </div>
                     </div>
                 </div>
-                <div class="nicdark_textevidence nicdark_bg_greydark">
-                    <h4 class="white nicdark_margin20">КЛАВИР</h4>
-                </div>
-                <div class="nicdark_margin20">
-                    <p>Индивидуални часови са наставником клавира.Програми за све узрасте, од припремног до академског, 
-                        по методама и плану и програму музичких школа.</p>
-                    <div class="nicdark_space20"></div>
-                    <a href="#klavir" rel="modal:open" class="white nicdark_btn nicdark_bg_orange medium nicdark_radius nicdark_shadow nicdark_press">ДЕТАЉНИЈЕ</a>
-                </div>
-            </div>
-        </div>
+        <?php endforeach; ?>
 
-        <div class="grid grid_4">
-            <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow center"> 
-                <div style="background:url(<?= $this->baseUrl('/img/courses/img2.jpg');?>); background-size:cover;" class="nicdark_archive1 nicdark_radius">
-                    <div class="nicdark_filter yellow nicdark_radius_top">
-                        <div class="nicdark_space60"></div>
-                        <div class="nicdark_space60"></div>
-                    </div>
-                </div>
-                <div class="nicdark_textevidence nicdark_bg_greydark">
-                    <h4 class="white nicdark_margin20">СОЛФЕЂО</h4>
-                </div>
-                <div class="nicdark_margin20">
-                    <p>Mоже бити „баук“ многима то обично и јесте, због неразумевања и страха у почетку учења. 
-                        Обично се учи на групној настави, па је самим тим теже да се професор посвети...</p>
-                    <div class="nicdark_space20"></div>
-                    <a href="#solfedjo" rel="modal:open" class="white nicdark_btn nicdark_bg_yellow medium nicdark_radius nicdark_shadow nicdark_press">ДЕТАЉНИЈЕ</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid grid_4">
-            <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow center"> 
-                <div style="background:url(<?= $this->baseUrl('/img/courses/img1.jpg');?>); background-size:cover;" class="nicdark_archive1 nicdark_radius">
-                    <div class="nicdark_filter green nicdark_radius_top">
-                        <div class="nicdark_space60"></div>
-                        <div class="nicdark_space60"></div>
-                    </div>
-                </div>
-                <div class="nicdark_textevidence nicdark_bg_greydark">
-                    <h4 class="white nicdark_margin20">СОЛО ПЕВАЊЕ</h4>
-                </div>
-                <div class="nicdark_margin20">
-                    <p>Учимо технике дисања и основе соло-певачке, вокалне, технике. Научите најлепше песме старих 
-                        мајстора и домаћих аутора. Држимо и припремну наставу за упис у нижу...</p>
-                    <div class="nicdark_space20"></div>
-                    <a href="#solopevanje" rel="modal:open" class="white nicdark_btn nicdark_bg_blue medium nicdark_radius nicdark_shadow nicdark_press">ДЕТАЉНИЈЕ</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid grid_4">
-            <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow center"> 
-                <div style="background:url(<?= $this->baseUrl('/img/excursions/img8.jpg');?>); background-size:cover;" class="nicdark_archive1 nicdark_radius">
-                    <div class="nicdark_filter blue nicdark_radius_top">
-                        <div class="nicdark_space60"></div>
-                        <div class="nicdark_space60"></div>
-                    </div>
-                </div>
-                <div class="nicdark_textevidence nicdark_bg_greydark">
-                    <h4 class="white nicdark_margin20">ПОПУЛАРНА И ЏЕЗ МУЗИКА</h4>
-                </div>
-                <div class="nicdark_margin20">
-                    <p>Волите да певате, али бисте волели да своје певање мало „уобличите“ и научите неке од цака којима 
-                        се служе популарне звезде данашњице? Да проширите распон гласа и... </p>
-                    <div class="nicdark_space20"></div>
-                    <a href="#popularnamuzika" rel="modal:open" class="white nicdark_btn nicdark_bg_blue medium nicdark_radius nicdark_shadow nicdark_press">ДЕТАЉНИЈЕ</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid grid_4">
-            <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow center"> 
-                <div style="background:url(<?= $this->baseUrl('/img/excursions/img1.jpg');?>); background-size:cover;" class="nicdark_archive1 nicdark_radius">
-                    <div class="nicdark_filter blue nicdark_radius_top">
-                        <div class="nicdark_space60"></div>
-                        <div class="nicdark_space60"></div>
-                    </div>
-                </div>
-                <div class="nicdark_textevidence nicdark_bg_greydark">
-                    <h4 class="white nicdark_margin20">УВОД У КОМПОНОВАЊЕ</h4>
-                </div>
-                <div class="nicdark_margin20">
-                    <p>Jе програм за ученике за које се подразумева да познају основе теорије музике и солфеђа.
-                    Научите да уобличите и запишете своје идеје и створите чаробне мелодије!</p>
-                    <div class="nicdark_space20"></div>
-                    <a href="#komponovanje" rel="modal:open" class="white nicdark_btn nicdark_bg_blue medium nicdark_radius nicdark_shadow nicdark_press">ДЕТАЉНИЈЕ</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid grid_4">
-            <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow center"> 
-                <div style="background:url(<?= $this->baseUrl('/img/excursions/img6.jpg');?>); background-size:cover;" class="nicdark_archive1 nicdark_radius">
-                    <div class="nicdark_filter violet nicdark_radius_top">
-                        <div class="nicdark_space60"></div>
-                        <div class="nicdark_space60"></div>
-                    </div>
-                </div>
-                <div class="nicdark_textevidence nicdark_bg_greydark">
-                    <h4 class="white nicdark_margin20">ОСНОВЕ ТЕОРИЈЕ МУЗИКЕ</h4>
-                </div>
-                <div class="nicdark_margin20">
-                    <p>Теорија музике је наука која се бави тумачењем музичких елемената, правила и закона по којима 
-                        се они примењују приликом стварања и извођења музичких дела...</p>
-                    <div class="nicdark_space20"></div>
-                    <a href="#osnovemuzike" rel="modal:open" class="white nicdark_btn nicdark_bg_violet medium nicdark_radius nicdark_shadow nicdark_press">ДЕТАЉНИЈЕ</a>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="nicdark_space20"></div>
     <!--end nicdark_container-->

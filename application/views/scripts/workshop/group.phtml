@@ -21,84 +21,39 @@
         <!--end nicdark_container-->
     </div>
 </section>
-<!-- MODAL BOXES -->
-    <div id="creativeworkshop" style="display:none;">
-      <p style="color: #fff; font-size: 17px;text-align: center;">Индивидуални часови са наставником клавира.
-          <br>Програми за све узрасте, од припремног до академског, по методама и плану и програму музичких школа.</p>
-    </div>
-    <div id="maliorkestar" style="display:none;">
-      <p style="color: #fff; font-size: 17px;text-align: center;">Мали оркестар може бити „баук“ многима то обично и јесте, због неразумевања и страха у почетку учења. 
-          <br>Обично се учи на групној настави, па је самим тим теже да се професор посвети...</p>
-    </div>
-    <div id="hor" style="display:none;">
-      <p style="color: #fff; font-size: 17px;text-align: center;">Учимо технике дисања и основе соло-певачке, вокалне, технике. 
-          <br>Научите најлепше песме старих мајстора и домаћих аутора. Држимо и припремну наставу за упис у нижу...</p>
-    </div>
+    <!-- MODAL BOXES -->
+    <?php foreach ($this->workshopgroup as $workshop):?>
+        <div id="<?= $workshop['id'];?>" style="display:none;">
+          <p style="color: #fff; font-size: 17px;text-align: center;"><?= $workshop['title'];?>
+              <br><?= $workshop['description'];?></p>
+        </div>
+    <?php endforeach;?>
 
 <!-- END MODAL BOXES -->
 <section class="nicdark_section">
     <!--start nicdark_container-->
     <div class="nicdark_container nicdark_clearfix">
         <div class="nicdark_space50"></div>
-        <div class="grid grid_4">
-            <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow center"> 
-                <div style="background:url(<?= $this->baseUrl('/img/courses/img3.jpg');?>); background-size:cover;" class="nicdark_archive1 nicdark_radius">
-                    <div class="nicdark_filter orange nicdark_radius_top">
-                        <div class="nicdark_space60"></div>
-                        <div class="nicdark_space60"></div>
+        <?php foreach ($this->workshopgroup as $workshop):?>
+            <div class="grid grid_4">
+                <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow center"> 
+                    <div style="background:url(<?= $this->workshopImgUrl($workshop);?>); background-size:cover;" class="nicdark_archive1 nicdark_radius">
+                        <div class="nicdark_filter orange nicdark_radius_top">
+                            <div class="nicdark_space60"></div>
+                            <div class="nicdark_space60"></div>
+                        </div>
+                    </div>
+                    <div class="nicdark_textevidence nicdark_bg_greydark">
+                        <h4 class="white nicdark_margin20"><?= strtoupper($workshop['title']);?></h4>
+                    </div>
+                    <div class="nicdark_margin20">
+                        <p><?= $workshop['short_description'];?></p>
+                        <div class="nicdark_space20"></div>
+                        <a href="#<?= $workshop['id'];?>" rel="modal:open" class="white nicdark_btn nicdark_bg_orange medium nicdark_radius nicdark_shadow nicdark_press">ДЕТАЉНИЈЕ</a>
                     </div>
                 </div>
-                <div class="nicdark_textevidence nicdark_bg_greydark">
-                    <h4 class="white nicdark_margin20">КРЕАТИВНЕ РАДИОНИЦЕ</h4>
-                </div>
-                <div class="nicdark_margin20">
-                    <p>Индивидуални часови са наставником клавира.Програми за све узрасте, од припремног до академског, 
-                        по методама и плану и програму музичких школа.</p>
-                    <div class="nicdark_space20"></div>
-                    <a href="#creativeworkshop" rel="modal:open" class="white nicdark_btn nicdark_bg_orange medium nicdark_radius nicdark_shadow nicdark_press">ДЕТАЉНИЈЕ</a>
-                </div>
             </div>
-        </div>
-
-        <div class="grid grid_4">
-            <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow center"> 
-                <div style="background:url(<?= $this->baseUrl('/img/courses/img2.jpg');?>); background-size:cover;" class="nicdark_archive1 nicdark_radius">
-                    <div class="nicdark_filter yellow nicdark_radius_top">
-                        <div class="nicdark_space60"></div>
-                        <div class="nicdark_space60"></div>
-                    </div>
-                </div>
-                <div class="nicdark_textevidence nicdark_bg_greydark">
-                    <h4 class="white nicdark_margin20">МАЛИ ОРКЕСТАР</h4>
-                </div>
-                <div class="nicdark_margin20">
-                    <p>Mоже бити „баук“ многима то обично и јесте, због неразумевања и страха у почетку учења. 
-                        Обично се учи на групној настави, па је самим тим теже да се професор посвети...</p>
-                    <div class="nicdark_space20"></div>
-                    <a href="#maliorkestar" rel="modal:open" class="white nicdark_btn nicdark_bg_yellow medium nicdark_radius nicdark_shadow nicdark_press">ДЕТАЉНИЈЕ</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid grid_4">
-            <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow center"> 
-                <div style="background:url(<?= $this->baseUrl('/img/courses/img1.jpg');?>); background-size:cover;" class="nicdark_archive1 nicdark_radius">
-                    <div class="nicdark_filter green nicdark_radius_top">
-                        <div class="nicdark_space60"></div>
-                        <div class="nicdark_space60"></div>
-                    </div>
-                </div>
-                <div class="nicdark_textevidence nicdark_bg_greydark">
-                    <h4 class="white nicdark_margin20">ХОРИЋ</h4>
-                </div>
-                <div class="nicdark_margin20">
-                    <p>Учимо технике дисања и основе соло-певачке, вокалне, технике. Научите најлепше песме старих 
-                        мајстора и домаћих аутора. Држимо и припремну наставу за упис у нижу...</p>
-                    <div class="nicdark_space20"></div>
-                    <a href="#hor" rel="modal:open" class="white nicdark_btn nicdark_bg_blue medium nicdark_radius nicdark_shadow nicdark_press">ДЕТАЉНИЈЕ</a>
-                </div>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
     <div class="nicdark_space20"></div>
     <!--end nicdark_container-->

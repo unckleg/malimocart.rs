@@ -68,7 +68,7 @@ class Admin_BlogController extends Zend_Controller_Action
                         $redirector = $this->getHelper('Redirector');
                         $redirector->setExit(true)
                                 ->gotoRoute(array(
-                                        'controller' => 'admin_dashboard',
+                                        'controller' => 'admin_blog',
                                         'action' => 'index'
                                 )    , 'default', true);
 
@@ -97,7 +97,7 @@ class Admin_BlogController extends Zend_Controller_Action
         $modelBlog = new Application_Model_DbTable_Admin_CmsBlog();
         $post = $modelBlog->getPostById($id);
         $form->populate($post);
-        if ($request->isPost() && $request->getPost('task') === 'create') {
+        if ($request->isPost() && $request->getPost('task') === 'update') {
 
                 try {
                         //check form is valid
@@ -114,7 +114,7 @@ class Admin_BlogController extends Zend_Controller_Action
                         $request->getPost('category_news') ? $formData['category_news'] = 1 : $formData['category_news'] = 0;
                         $request->getPost('category_announcements') ? $formData['category_announcements'] = 1 : $formData['category_announcements'] = 0;
                         
-                        $post = $modelBlog->insertPost($formData);
+                        $post = $modelBlog->updatePost($id, $formData);
 
                         if($form->getElement('post_photo')->isUploaded()) {
                             $fileInfos = $form->getElement('post_photo')->getFileInfo('post_photo');
@@ -123,7 +123,7 @@ class Admin_BlogController extends Zend_Controller_Action
                             {
                                 $postPhoto = Intervention\Image\ImageManagerStatic::make($fileInfo['tmp_name']);
                                 $postPhoto->fit(800, 600);
-                                $postPhoto->save(PUBLIC_PATH . '/uploads/blog-photos/' . $post['id'] . '.jpg');
+                                $postPhoto->save(PUBLIC_PATH . '/uploads/blog-photos/' . $id . '.jpg');
                             } catch (Exception $ex)
                             {
                                 throw new Application_Model_Exception_InvalidInput('Дошло је до грешке приликом процесовања фотографије.');
@@ -138,7 +138,7 @@ class Admin_BlogController extends Zend_Controller_Action
                         $redirector = $this->getHelper('Redirector');
                         $redirector->setExit(true)
                                 ->gotoRoute(array(
-                                        'controller' => 'admin_dashboard',
+                                        'controller' => 'admin_blog',
                                         'action' => 'index'
                                 )    , 'default', true);
 

@@ -1,0 +1,264 @@
+<meta property="og:image" content="/uploads/blog-photos/<?= $this->post['id'];?>.jpg" />
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img8" style="background-position: 50% -117px;">
+
+    <div class="nicdark_filter greydark">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle"><?= $this->post['title'];?></h1>
+                <div class="nicdark_space10"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </div>
+     
+</section>
+
+<section class="nicdark_section">
+
+    <!--start nicdark_container-->
+    <div class="nicdark_container nicdark_clearfix">
+
+        <div class="nicdark_space50"></div>
+
+		<div class="grid grid_8">
+			<img alt="" class="nicdark_radius nicdark_opacity" style="float:left;width:100%;" src="/uploads/blog-photos/<?= $this->post['id'];?>.jpg">
+
+			<div class="nicdark_space20"></div>
+
+			<div class="nicdark_textevidence nicdark_bg_orange nicdark_radius nicdark_shadow">
+                <div class="nicdark_size_big">
+                    <p class="white"><i class="icon-calendar-1 nicdark_marginright10"></i><?= date('y-m-d', strtotime($this->post['date_published']));?>
+                        <span class="nicdark_margin010">·</span> <i class="icon-user-1 nicdark_marginright10"></i><?= $this->post['author_id'];?> <span class="nicdark_margin010">·</span></p>
+                </div>
+                <i class="icon-info-outline nicdark_iconbg right medium orange"></i>
+            </div>
+
+            <div class="nicdark_space50"></div>
+
+            <h1 class="subtitle greydark"><?= $this->post['title'];?></h1>
+            <div class="nicdark_space20"></div>
+            <div class="nicdark_divider left small"><span class="nicdark_bg_yellow nicdark_radius"></span></div>
+            <div class="nicdark_space20"></div>
+
+            <!--author-->
+            <div class="nicdark_archive1 nicdark_bg_yellow nicdark_radius nicdark_shadow">
+                <div class="nicdark_margin20 nicdark_relative">
+                       
+                    <img alt="" class="nicdark_displaynone_ipadpotr nicdark_radius_circle nicdark_absolute" style="width:100px;">
+	                <div class="nicdark_activity nicdark_disable_marginleft_ipadpotr">
+	                    <div class="nicdark_space20"></div>
+			            	<div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+			            <div class="nicdark_space20"></div>
+                                    <p class="white" style="color: #fff !important;"><?= strip_tags($this->post['text']);?></p>
+	                </div>
+
+                </div>
+            </div>
+            <!--author-->
+            <div class="nicdark_space50"></div>
+
+		</div>
+		
+		<!--sidebar-->
+		<div class="grid grid_4">
+			
+			<div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">
+                <div class="nicdark_textevidence nicdark_bg_yellow nicdark_radius_top">
+                    <h4 class="white nicdark_margin20">ТРАЖИ</h4>
+                    <i class="icon-search-outline nicdark_iconbg right medium yellow"></i>
+                </div>
+                <div class="nicdark_margin20">
+                    <input class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle" type="text" value="" size="200" placeholder="Унесите речи за претрагу">
+                    <div class="nicdark_space20"></div>
+                    <input class="nicdark_btn nicdark_bg_yellow medium nicdark_shadow nicdark_radius white" type="submit" value="Претрага">
+                </div>
+            </div>
+
+            <div class="nicdark_space20"></div>
+
+            <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">
+                <div class="nicdark_textevidence nicdark_bg_orange nicdark_radius_top">
+                    <h4 class="white nicdark_margin20">ОЗНАКЕ</h4>
+                    <i class="icon-tags-1 nicdark_iconbg right medium orange"></i>
+                </div>
+                <div class="nicdark_margin10">
+                    <?php $tagArray = explode(", ", $this->post['tags']);?>
+                    <?php foreach ($tagArray as $tag):?>
+                        <a class="nicdark_btn nicdark_bg_grey2 small nicdark_shadow nicdark_radius grey subtitle nicdark_margin10"><?= $tag;?></a>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
+<!--            <div class="nicdark_space20"></div>
+
+            <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">
+                <div class="nicdark_textevidence nicdark_bg_violet nicdark_radius_top">
+                    <h4 class="white nicdark_margin20">LATEST POSTS</h4>
+                    <i class="icon-doc-1 nicdark_iconbg right medium violet"></i>
+                </div>
+                <ul class="nicdark_list border">
+                        
+                    <li class="nicdark_border_grey">
+                        <div class="nicdark_margin20 nicdark_relative">
+                        <img alt="" class="nicdark_absolute nicdark_radius" style="width:60px;" src="img/footer/img4.jpg">
+                        <div class="nicdark_activity nicdark_marginleft80">
+                            <h5 class="grey">LOREM IPSUM</h5>                        
+                            <div class="nicdark_space10"></div>
+                            <p>Lorem ipsum dolor sit amet conse adip elit. Pellentesque tinci dolor sit.</p>
+                        </div></div>
+                    </li>
+
+                    <li class="nicdark_border_grey">
+                        <div class="nicdark_margin20 nicdark_relative">
+                        <img alt="" class="nicdark_absolute nicdark_radius" style="width:60px;" src="img/footer/img1.jpg">
+                        <div class="nicdark_activity nicdark_marginleft80">
+                            <h5 class="grey">LOREM IPSUM</h5>                        
+                            <div class="nicdark_space10"></div>
+                            <p>Lorem ipsum dolor sit amet conse adip elit. Pellentesque tinci dolor sit.</p>
+                        </div></div>
+                    </li>
+                        
+                    <li class="nicdark_border_grey">
+                        <div class="nicdark_margin20 nicdark_relative">
+                        <img alt="" class="nicdark_absolute nicdark_radius" style="width:60px;" src="img/footer/img5.jpg">
+                        <div class="nicdark_activity nicdark_marginleft80">
+                            <h5 class="grey">LOREM IPSUM</h5>                        
+                            <div class="nicdark_space10"></div>
+                            <p>Lorem ipsum dolor sit amet conse adip elit. Pellentesque tinci dolor sit.</p>
+                        </div></div>
+                    </li>
+                        
+                </ul>
+            </div>
+
+            <div class="nicdark_space20"></div>
+
+            <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">
+                <div class="nicdark_textevidence nicdark_bg_blue nicdark_radius_top">
+                    <h4 class="white nicdark_margin20">NEXT EVENTS</h4>
+                    <i class="icon-calendar-1 nicdark_iconbg right medium blue"></i>
+                </div>
+                <ul class="nicdark_list border">
+                        
+                    <li class="nicdark_border_grey">
+                        <div class="nicdark_margin20 nicdark_relative">
+                            <div style="width:60px;" class="nicdark_absolute nicdark_activity center">    
+                                <div class="nicdark_textevidence nicdark_bg_greydark nicdark_radius_top">
+                                    <h2 class="white nicdark_margin5">21</h2>
+                                </div>
+                                <div class="nicdark_textevidence nicdark_bg_blue nicdark_radius_bottom">
+                                    <h6 class="white nicdark_margin5">DEC</h6>
+                                </div>
+                            </div>
+                            <div class="nicdark_activity nicdark_marginleft80">
+                                <h5 class="grey">LOREM IPSUM</h5>                        
+                                <div class="nicdark_space10"></div>
+                                <p>Lorem ipsum dolor sit amet conse adip elit. Pellentesque tinci dolor sit.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nicdark_border_grey">
+                        <div class="nicdark_margin20 nicdark_relative">
+                            <div style="width:60px;" class="nicdark_absolute nicdark_activity center">    
+                                <div class="nicdark_textevidence nicdark_bg_greydark nicdark_radius_top">
+                                    <h2 class="white nicdark_margin5">21</h2>
+                                </div>
+                                <div class="nicdark_textevidence nicdark_bg_blue nicdark_radius_bottom">
+                                    <h6 class="white nicdark_margin5">DEC</h6>
+                                </div>
+                            </div>
+                            <div class="nicdark_activity nicdark_marginleft80">
+                                <h5 class="grey">LOREM IPSUM</h5>                        
+                                <div class="nicdark_space10"></div>
+                                <p>Lorem ipsum dolor sit amet conse adip elit. Pellentesque tinci dolor sit.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nicdark_border_grey">
+                        <div class="nicdark_margin20 nicdark_relative">
+                            <div style="width:60px;" class="nicdark_absolute nicdark_activity center">    
+                                <div class="nicdark_textevidence nicdark_bg_greydark nicdark_radius_top">
+                                    <h2 class="white nicdark_margin5">21</h2>
+                                </div>
+                                <div class="nicdark_textevidence nicdark_bg_blue nicdark_radius_bottom">
+                                    <h6 class="white nicdark_margin5">DEC</h6>
+                                </div>
+                            </div>
+                            <div class="nicdark_activity nicdark_marginleft80">
+                                <h5 class="grey">LOREM IPSUM</h5>                        
+                                <div class="nicdark_space10"></div>
+                                <p>Lorem ipsum dolor sit amet conse adip elit. Pellentesque tinci dolor sit.</p>
+                            </div>
+                        </div>
+                    </li>
+                        
+                </ul>
+            </div>
+
+            <div class="nicdark_space20"></div>
+
+            <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">
+                <div class="nicdark_textevidence nicdark_bg_red nicdark_radius_top">
+                    <h4 class="white nicdark_margin20">DOCUMENTS</h4>
+                    <i class="icon-file-pdf nicdark_iconbg right medium red"></i>
+                </div>
+                <ul class="nicdark_list border">
+                        
+                    <li class="nicdark_border_grey">
+                        <div class="nicdark_margin20 nicdark_relative">
+                        <a href="#" class="nicdark_btn_icon small nicdark_radius_circle red nicdark_absolute nicdark_border_red"><i class="icon-file-pdf"></i></a>
+                        <div class="nicdark_activity nicdark_marginleft60">
+                            <h5 class="grey">LOREM IPSUM</h5>                        
+                            <div class="nicdark_space10"></div>
+                            <p>Lorem ipsum dolor sit amet conse adip elit. Pellentesque tinci dolor sit amet.</p>
+                        </div></div>
+                    </li>
+
+                    <li class="nicdark_border_grey">
+                        <div class="nicdark_margin20 nicdark_relative">
+                        <a href="#" class="nicdark_btn_icon small nicdark_radius_circle red nicdark_absolute nicdark_border_red"><i class="icon-file-pdf"></i></a>
+                        <div class="nicdark_activity nicdark_marginleft60">
+                            <h5 class="grey">LOREM IPSUM</h5>                        
+                            <div class="nicdark_space10"></div>
+                            <p>Lorem ipsum dolor sit amet conse adip elit. Pellentesque tinci dolor sit amet.</p>
+                        </div></div>
+                    </li>
+                        
+
+
+                    <li class="nicdark_border_grey">
+                        <div class="nicdark_margin20 nicdark_relative">
+                        <a href="#" class="nicdark_btn_icon small nicdark_radius_circle red nicdark_absolute nicdark_border_red"><i class="icon-file-pdf"></i></a>
+                        <div class="nicdark_activity nicdark_marginleft60">
+                            <h5 class="grey">LOREM IPSUM</h5>                        
+                            <div class="nicdark_space10"></div>
+                            <p>Lorem ipsum dolor sit amet conse adip elit. Pellentesque tinci dolor sit amet.</p>
+                        </div>
+                        </div>
+                    </li>
+                        
+                </ul>
+            </div>-->
+
+
+		</div>
+		<!--sidebar-->
+
+		<div class="nicdark_space50"></div>
+
+    </div>
+    <!--end nicdark_container-->
+            
+</section>

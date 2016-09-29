@@ -100,7 +100,7 @@ class Application_Model_DbTable_Front_FrontContact extends Zend_Db_Table_Abstrac
         public function statusRead()
         {
             $this->update(array(
-                'status' => self::PARENT_CHECKED
+                'status' => self::MAIL_CHECKED
             ), 'status = 0');
         }
         /**
@@ -135,10 +135,11 @@ class Application_Model_DbTable_Front_FrontContact extends Zend_Db_Table_Abstrac
                     switch ($field) 
                     {
                         case 'id':
-                        case 'title':
-                        case 'description':
-                        case 'page':
-                        case 'order_number':
+                        case 'from_name':
+                        case 'from_email':
+                        case 'subject':
+                        case 'message_text':
+                        case 'date_sended':
                         case 'status':
                             if ($orderDirection === 'DESC') {
                                 $select->order($field . ' DESC');
@@ -209,11 +210,12 @@ class Application_Model_DbTable_Front_FrontContact extends Zend_Db_Table_Abstrac
             foreach ($filters as $field => $value) {
                 switch ($field) 
                 {
-                    case 'id':
-                        case 'title':
-                        case 'description':
-                        case 'page':
-                        case 'order_number':
+                        case 'id':
+                        case 'from_name':
+                        case 'from_email':
+                        case 'subject':
+                        case 'message_text':
+                        case 'date_sended':
                         case 'status':
                         if(is_array($value)) {
                             $select->where($field . ' IN (?)', $value);
@@ -224,6 +226,12 @@ class Application_Model_DbTable_Front_FrontContact extends Zend_Db_Table_Abstrac
                     case 'status_search':
                         $select->where('status LIKE ?', '%' . $value . '%');
                         break;
+                    case 'date_sended_search':
+                       $select->where('date_sended LIKE ?', '%' . $value . '%');
+                       break;
+                    case 'from_email_search':
+                       $select->where('from_email LIKE ?', '%' . $value . '%');
+                       break;
                     case 'id_exclude':
                         if (is_array($value)) {
                             $select->where('id NOT IN (?)', $value);

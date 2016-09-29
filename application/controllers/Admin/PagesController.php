@@ -59,7 +59,7 @@ class Admin_PagesController extends Zend_Controller_Action
             try {
                 //check form is valid
                 if (!$form->isValid($request->getPost())) {
-                    throw new Application_Model_Exception_InvalidInput('Неисправне информације прослеђене за елемент.');
+                    $error = $form->getMessages();
                 }
 
                 //get form data
@@ -80,7 +80,7 @@ class Admin_PagesController extends Zend_Controller_Action
                     }
                 }
                 //Save update to database Success
-                $cmsWorkshopsDbTable->updateWorkshop($workshop['id'], $formData);
+                $cmsWorkshopsDbTable->updateWorkshop($id, $formData);
                 //set system message
                 $flashMessenger->addMessage('Елемент је успешно измењен!', 'success');
                 //redirect to same or another page
