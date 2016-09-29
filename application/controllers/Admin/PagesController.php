@@ -72,8 +72,8 @@ class Admin_PagesController extends Zend_Controller_Action
                     try
                     {
                         $workshopPhoto = Intervention\Image\ImageManagerStatic::make($fileInfo['tmp_name']);
-                        $workshopPhoto->fit(600, 400);
-                        $workshopPhoto->save(PUBLIC_PATH . '/uploads/workshop-images/' . $workshop['id'] . '.jpg');
+                        $workshopPhoto->fit(380, 200);
+                        $workshopPhoto->save(PUBLIC_PATH . '/uploads/workshop-images/' . $id . '.jpg');
                     } catch (Exception $ex)
                     {
                         throw new Application_Model_Exception_InvalidInput('Дошло је до грешке приликом процесовања фотографије.');

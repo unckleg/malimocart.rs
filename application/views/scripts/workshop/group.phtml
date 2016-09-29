@@ -34,11 +34,12 @@
     <!--start nicdark_container-->
     <div class="nicdark_container nicdark_clearfix">
         <div class="nicdark_space50"></div>
+        <?php $colorArray = array('blue', 'orange', 'green','yellow','red',);?>
         <?php foreach ($this->workshopgroup as $workshop):?>
             <div class="grid grid_4">
                 <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow center"> 
                     <div style="background:url(<?= $this->workshopImgUrl($workshop);?>); background-size:cover;" class="nicdark_archive1 nicdark_radius">
-                        <div class="nicdark_filter orange nicdark_radius_top">
+                        <div class="nicdark_filter <?= $colorArray[array_rand($colorArray)]; ?> nicdark_radius_top">
                             <div class="nicdark_space60"></div>
                             <div class="nicdark_space60"></div>
                         </div>
