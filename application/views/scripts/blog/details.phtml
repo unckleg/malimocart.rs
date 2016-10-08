@@ -1,4 +1,9 @@
-<meta property="og:image" content="/uploads/blog-photos/<?= $this->post['id'];?>.jpg" />
+<?php 
+    $this->doctype('XHTML1_RDFA');
+    $this->headMeta()->setProperty('og:title', $this->post['title']);
+    $this->headMeta()->setProperty('og:type', 'Новости');
+    $this->headMeta()->setProperty('og:author', 'Ана');
+?>
 <section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img8" style="background-position: 50% -117px;">
 
     <div class="nicdark_filter greydark">

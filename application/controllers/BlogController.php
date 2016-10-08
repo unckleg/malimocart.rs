@@ -22,6 +22,7 @@ class BlogController extends Zend_Controller_Action
         $post = $modelBlog->getPostById($id);
         
         $this->view->post = $post;
+        $this->view->doctype('XHTML1_RDFA'); 
     }
 }
 

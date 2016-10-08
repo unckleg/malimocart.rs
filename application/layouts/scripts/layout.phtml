@@ -6,13 +6,16 @@
 <head>
     <meta charset="utf-8">  
     <?php echo $this->headTitle('Школица Мали Моцарт')->setSeparator(' | ');?>
-    <meta name="description" content="Како име каже, ИГРАОНИЦА-РАДИОНИЦА-УЧИОНИЦА „Мали Моцарт“ ради управо то- кроз игру, покрет, визуелизацију, 
-                цртање, плес и низ других активности, малишани активно учествују у радионицама, те упијају нове вештине, 
-                развијају своје ритмичке, моторичке и музичке способности, као и музички језик (ноте, динамика, темпо итд) 
-                на један леп, неоптерећујући начин."> 
-    <meta name="author" content="Мали-Моцарт"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <?php echo $this->headMeta();?>
+    <?php if (empty($this->headMeta())):?>
+        <meta name="description" content="Како име каже, ИГРАОНИЦА-РАДИОНИЦА-УЧИОНИЦА „Мали Моцарт“ ради управо то- кроз игру, покрет, визуелизацију, 
+                    цртање, плес и низ других активности, малишани активно учествују у радионицама, те упијају нове вештине, 
+                    развијају своје ритмичке, моторичке и музичке способности, као и музички језик (ноте, динамика, темпо итд) 
+                    на један леп, неоптерећујући начин."> 
+        <meta name="author" content="Мали-Моцарт"> 
+    <?php endif;?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
     <!--START CSS-->  
    <link rel="stylesheet" href="<?php echo $this->baseUrl('/css/nicdark_style.css');?>"> <!--style-->
     <link rel="stylesheet" href="<?php echo $this->baseUrl('/css/nicdark_responsive.css');?>"> <!--nicdark_responsive-->
