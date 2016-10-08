@@ -6,7 +6,7 @@ class Application_Form_WorkshopEdit extends Zend_Form
             
 		$title = new Zend_Form_Element_Text('title');
 		$title->addFilter('StringTrim')
-			->addValidator('StringLength', false, array('min' => 3, 'max' => 255))
+			->addValidator('StringLength', false, array('min' => 3, 'max' => 500))
 			->setRequired(false);
 		$this->addElement($title);
 		
@@ -20,6 +20,7 @@ class Application_Form_WorkshopEdit extends Zend_Form
 			->setRequired(false);
 		$this->addElement($fullDesc);
 
+                
                 $workshopPhoto = new Zend_Form_Element_File('workshop_photo');
                 $workshopPhoto->addValidator('Count', true, 1)
                     ->addValidator('MimeType', true, array('image/jpeg', 'image/gif', 'image/png'))

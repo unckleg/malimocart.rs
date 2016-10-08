@@ -59,7 +59,7 @@
 	                    <div class="nicdark_space20"></div>
 			            	<div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
 			            <div class="nicdark_space20"></div>
-                                    <p class="white" style="color: #fff !important;"><?= strip_tags($this->post['text']);?></p>
+                                    <p class="white" style="color: #fff !important;"><?= $this->post['text'];?></p>
 	                </div>
 
                 </div>
@@ -262,3 +262,8 @@
     <!--end nicdark_container-->
             
 </section>
+<?php $this->headStyle()->captureStart();?>
+    p {
+        color: #ffffff !important;
+    }
+<?php $this->headStyle()->captureEnd();?>
