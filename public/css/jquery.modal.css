@@ -21,11 +21,12 @@
   background-color: transparent;
 }
 .modal {
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    z-index: 2;
-    width: 100%;
+    width: 300px;
+   position: absolute;
+   left: 50%;
+   top: 50%; 
+   margin-left: -150px;
+   margin-top: -150px;
     background: #ac7ab5;
     padding: 15px 30px;
     -webkit-border-radius: 8px;
@@ -41,6 +42,8 @@
     text-align: left;
 }
 
+    
+   
 .modal a.close-modal {
   position: absolute;
   top: -12.5px;
